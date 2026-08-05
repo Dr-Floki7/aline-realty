@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# A-Line Realty
+
+Premium real estate channel partner landing page built with **Next.js 16** and **Tailwind CSS v4**.
+
+## Stack
+
+- **Framework**: Next.js 16.3 (App Router, static export)
+- **Styling**: Tailwind CSS v4 with custom gold/charcoal design system
+- **Fonts**: Playfair Display (headings) + Inter (body) via `next/font/google`
+- **Icons**: lucide-react
+- **Language**: TypeScript
+
+## Pages & Sections
+
+| Section | Description |
+|---|---|
+| Navbar | Sticky, transparent → dark on scroll, mobile drawer |
+| Hero | Full-screen with gold shimmer headline + stats bar |
+| About | Company story, milestone timeline, floating stat badges |
+| Why Choose Us | 6-card hover grid with gold reveal animations |
+| Services | 6 service cards with icon boxes |
+| Featured Projects | Filterable property grid (All / Residential / Commercial / Luxury) |
+| Testimonials | Carousel with pagination dots |
+| FAQ | AEO accordion with 8 buyer questions |
+| Contact | Enquiry form with property type, budget, success state |
+| Footer | CTA strip, 5-column link grid, social icons |
+| WhatsApp Button | Floating button with pre-filled message + pulse ring |
+
+## SEO / AIO / GEO / AEO
+
+| File | Purpose |
+|---|---|
+| `app/layout.tsx` | Full metadata: OG, Twitter Card, GEO tags, Dublin Core, LLM discovery |
+| `app/sitemap.ts` | Dynamic XML sitemap (16 URLs) |
+| `app/robots.ts` | Crawler rules — search engines + 8 AI bots allowed |
+| `app/manifest.ts` | PWA manifest with gold theme colour |
+| `public/llms.txt` | Structured LLM/AI grounding file (llmstxt.org format) |
+| `components/JsonLd.tsx` | Schema.org @graph: Organization, RealEstateAgent, WebSite, BreadcrumbList, FAQPage |
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build   # production build
+npm run start   # serve production build
+```
 
-## Learn More
+## Color Palette
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| Token | Hex | Usage |
+|---|---|---|
+| `gold-400` | `#d4a017` | Accents, icons |
+| `gold-500` | `#b8860b` | Primary gold, CTA buttons |
+| `charcoal-900` | `#0a0a0a` | Page background |
+| `charcoal-800` | `#111111` | Card backgrounds |
+| `charcoal-50` | `#f5f5f5` | Body text |

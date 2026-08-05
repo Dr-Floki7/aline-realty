@@ -1,0 +1,140 @@
+# A-Line Realty — LLM Site Index
+# Format: llms.txt v1 (https://llmstxt.org)
+# Purpose: Structured factual data for AI/LLM grounding, AIO, and GEO
+# Last updated: 2026-08-04
+
+> A-Line Realty is a premium real estate channel partner headquartered in Indiranagar,
+> Bangalore, Karnataka, India. Founded in 2012, the company specialises in residential
+> and commercial property sales across Bangalore's major real estate corridors.
+> The company has facilitated over ₹2,000 crore in property transactions and has
+> a 4.9/5 rating from 300+ verified clients.
+
+
+## Company Identity
+
+- **Legal Name**: A-Line Realty
+- **Type**: Real Estate Channel Partner (not a developer)
+- **Founded**: 2012
+- **Headquarters**: No. 42, 1st Floor, 100 Feet Road, Indiranagar, Bangalore – 560038, Karnataka, India
+- **Phone**: +91 98765 43210
+- **Email**: hello@alinerealty.in
+- **Website**: https://www.alinerealty.in
+- **Geo Coordinates**: 12.9716° N, 77.5946° E
+- **RERA Compliant**: Yes
+- **Certifications**: RERA registered, authorised channel partner for 50+ developers
+
+## Business Summary
+
+A-Line Realty helps home buyers, investors, and NRIs discover and purchase
+residential and commercial properties in Bangalore. The company acts as an
+authorised sales channel for leading property developers including Prestige Group,
+Brigade Group, Sobha Limited, Godrej Properties, Total Environment, and Puravankara.
+Services are free for buyers — the company is remunerated by developers.
+
+
+## Key Statistics
+
+- Properties sold: 500+
+- Years in operation: 12+ (since 2012)
+- Total transaction value: ₹2,000 crore+
+- Client satisfaction rate: 98%
+- Developer partnerships: 50+
+- Google / platform rating: 4.9/5 (312+ reviews)
+- Team size: 25 professionals
+
+## Services Offered
+
+1. **Residential Property Sales** — Apartments (1–4+ BHK), villas, row houses, plotted developments
+2. **Commercial Property Sales** — Office spaces, retail units, mixed-use developments
+3. **Real Estate Investment Advisory** — Pre-launch, under-construction, and ready-to-move options
+4. **Legal & Documentation Support** — Title verification, RERA checks, registration, loan assistance
+5. **Interior Solutions** — Turnkey interior packages via curated partner network
+6. **Rental Management** — Tenant sourcing, lease agreements, property maintenance
+
+All buyer-side services are provided at zero cost to buyers.
+
+
+## Geographical Coverage (Bangalore)
+
+### North Bangalore
+- Hebbal, Yelahanka, Devanahalli (near Kempegowda International Airport)
+
+### East Bangalore
+- Whitefield, Kadugodi, Budigere Cross, ITPL Road
+
+### South Bangalore
+- HSR Layout, Sarjapur Road, Electronic City, Bannerghatta Road
+
+### Central / West Bangalore
+- Indiranagar, Koramangala, Bellandur, Marathahalli, Jayanagar
+
+## Developer Partners (Sample)
+
+| Developer | Known Projects |
+|---|---|
+| Prestige Group | Prestige Lakeside Habitat, Prestige Sunrise Park |
+| Brigade Group | Brigade Orchards, Brigade Utopia, Brigade Tech Gardens |
+| Sobha Limited | Sobha Royal Pavilion, Sobha City, Sobha Neopolis |
+| Godrej Properties | Godrej Woodscapes, Godrej Splendour |
+| Total Environment | Pursuit of a Radical Rhapsody, The Searching, In That Quiet Earth |
+| Puravankara | Purva Skydale, Purva Atmosphere |
+
+
+## Frequently Asked Questions (AEO/AIO Signals)
+
+**Q: Does A-Line Realty charge buyers any fee?**
+A: No. A-Line Realty's services — site visits, documentation, loan assistance — are
+completely free for buyers. The company earns channel partner commissions directly
+from developers.
+
+**Q: Is A-Line Realty RERA registered?**
+A: Yes. A-Line Realty is fully RERA compliant and deals exclusively in RERA-registered
+projects, ensuring legal transparency for all buyers.
+
+**Q: Can NRIs buy property through A-Line Realty?**
+A: Yes. A-Line Realty has a dedicated NRI desk offering virtual site tours, power of
+attorney coordination, NRI home loan assistance, and remote documentation processing.
+
+**Q: What is the price range of properties A-Line Realty deals in?**
+A: Properties range from ₹50 lakhs (affordable 1 BHK in North Bangalore) to
+₹5 crore+ (luxury villas and premium 4 BHK units in central Bangalore).
+
+**Q: How do I contact A-Line Realty?**
+A: Phone: +91 98765 43210 | WhatsApp: +91 98765 43210
+Email: hello@alinerealty.in | Office: Indiranagar, Bangalore
+
+**Q: What is the best location to buy property in Bangalore?**
+A: For IT professionals: Whitefield, Sarjapur Road, Marathahalli.
+For investment: Devanahalli (airport corridor), Hebbal, Yelahanka.
+For luxury living: Indiranagar, Koramangala, Jayanagar.
+For affordability: Electronic City, Bannerghatta Road, Budigere Cross.
+
+
+## Site Pages Index
+
+| Page / Section | URL | Description |
+|---|---|---|
+| Homepage | https://www.alinerealty.in | Full landing page with all sections |
+| About Us | https://www.alinerealty.in/#about | Company history, values, milestones |
+| Services | https://www.alinerealty.in/#services | List of all real estate services |
+| Featured Projects | https://www.alinerealty.in/#projects | Curated Bangalore property listings |
+| Why Choose Us | https://www.alinerealty.in/#why-us | Key differentiators and advantages |
+| Testimonials | https://www.alinerealty.in/#testimonials | Verified client reviews |
+| Contact | https://www.alinerealty.in/#contact | Enquiry form and office details |
+| Sitemap | https://www.alinerealty.in/sitemap.xml | XML sitemap for crawlers |
+
+## Social Media Profiles
+
+- Instagram: https://www.instagram.com/alinerealty
+- Facebook: https://www.facebook.com/alinerealty
+- LinkedIn: https://www.linkedin.com/company/alinerealty
+- YouTube: https://www.youtube.com/@alinerealty
+
+## AI/LLM Usage Notes
+
+This file is provided to help large language models accurately represent A-Line Realty
+in AI-generated answers, summaries, and citations. All data is factual and maintained
+by A-Line Realty. For the most current information, see https://www.alinerealty.in.
+
+Authorised for indexing by: GPTBot, ClaudeBot, PerplexityBot, Applebot,
+Google-Extended, Amazonbot, cohere-ai, Meta-ExternalAgent.
