@@ -1,168 +1,152 @@
 "use client";
 
-import { MapPin, Phone, Mail, Instagram, Facebook, Linkedin, Youtube } from "lucide-react";
+import { Phone, Mail, MapPin, Instagram, Facebook, Linkedin } from "lucide-react";
 
-const footerLinks = {
-  "Quick Links": [
-    { label: "Home", href: "#home" },
-    { label: "About Us", href: "#about" },
-    { label: "Services", href: "#services" },
-    { label: "Projects", href: "#projects" },
-    { label: "Testimonials", href: "#testimonials" },
-    { label: "Contact", href: "#contact" },
-  ],
-  "Services": [
-    { label: "Residential Sales", href: "#services" },
-    { label: "Commercial Properties", href: "#services" },
-    { label: "Investment Advisory", href: "#services" },
-    { label: "Legal & Documentation", href: "#services" },
-    { label: "Interior Solutions", href: "#services" },
-    { label: "Rental Management", href: "#services" },
-  ],
-  "Locations": [
-    { label: "Whitefield", href: "#projects" },
-    { label: "Sarjapur Road", href: "#projects" },
-    { label: "Indiranagar", href: "#projects" },
-    { label: "Koramangala", href: "#projects" },
-    { label: "Hebbal", href: "#projects" },
-    { label: "Devanahalli", href: "#projects" },
-  ],
-};
+const QUICK_LINKS = [
+  { label: "Home",            href: "#home" },
+  { label: "About Us",        href: "#about" },
+  { label: "Why Choose Us",   href: "#why-us" },
+  { label: "Services",        href: "#services" },
+  { label: "Contact",         href: "#contact" },
+];
 
-const socials = [
-  { icon: Instagram, label: "Instagram", href: "https://instagram.com" },
-  { icon: Facebook, label: "Facebook", href: "https://facebook.com" },
-  { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com" },
-  { icon: Youtube, label: "YouTube", href: "https://youtube.com" },
+const LEGAL_LINKS = [
+  { label: "Privacy Policy",  href: "/privacy-policy" },
+  { label: "Terms of Use",    href: "/terms" },
+];
+
+const SOCIALS = [
+  { icon: Instagram, label: "Instagram", href: "https://instagram.com/alinerealty" },
+  { icon: Facebook,  label: "Facebook",  href: "https://facebook.com/alinerealty" },
+  { icon: Linkedin,  label: "LinkedIn",  href: "https://linkedin.com/company/alinerealty" },
 ];
 
 export default function Footer() {
-  const scrollTo = (href: string) => {
-    const id = href.replace("#", "");
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  const scroll = (href: string) => {
+    if (href.startsWith("#")) {
+      document.getElementById(href.replace("#", ""))?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      window.location.href = href;
+    }
   };
 
   return (
-    <footer className="bg-charcoal-900 border-t border-charcoal-800">
-      {/* CTA strip */}
-      <div className="bg-gradient-to-r from-charcoal-800 via-charcoal-700 to-charcoal-800 border-b border-charcoal-700">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex flex-col sm:flex-row items-center justify-between gap-6">
+    <footer className="bg-neutral-950 text-neutral-400">
+      {/* CTA Banner */}
+      <div className="bg-gold-500">
+        <div className="max-w-6xl mx-auto px-5 sm:px-8 py-10 flex flex-col sm:flex-row items-center justify-between gap-5">
           <div>
-            <p className="font-serif text-2xl font-bold text-white mb-1">
+            <p className="font-serif text-xl font-bold text-white">
               Ready to find your dream property?
             </p>
-            <p className="text-charcoal-400 text-sm">
-              Get a free consultation from our Bangalore real estate experts.
+            <p className="text-white/80 text-sm mt-1">
+              Talk to our experts today — no commitment, no pressure.
             </p>
           </div>
-          <button
-            onClick={() => scrollTo("#contact")}
-            className="flex-shrink-0 px-8 py-3 bg-gold-500 text-white font-semibold text-sm border border-gold-500 hover:bg-gold-400 transition-all duration-300 cursor-pointer"
+          <a
+            href="tel:+917337861296"
+            className="shrink-0 inline-flex items-center gap-2 bg-white text-gold-700 font-bold rounded-lg px-7 py-3 text-sm hover:bg-neutral-50 transition-colors shadow"
           >
-            Book Free Consultation
-          </button>
+            <Phone size={15} />
+            Call Now
+          </a>
         </div>
       </div>
 
       {/* Main footer */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10">
-          {/* Brand column */}
-          <div className="lg:col-span-2">
-            <div className="mb-4">
-              <span className="font-serif text-3xl font-bold text-white">
-                A<span className="text-gold-400">-</span>Line
-              </span>
-              <div className="text-[11px] font-semibold tracking-[0.3em] uppercase text-gold-500 mt-0.5">
-                Realty
-              </div>
-            </div>
-            <p className="text-charcoal-400 text-sm leading-relaxed mb-6 max-w-xs">
-              Bangalore&apos;s trusted real estate channel partner since 2012. We help you
-              find, buy, and invest in properties with complete confidence.
-            </p>
+      <div className="max-w-6xl mx-auto px-5 sm:px-8 py-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
 
-            {/* Contact snippets */}
-            <div className="space-y-2">
+        {/* Brand */}
+        <div className="lg:col-span-2">
+          <p className="font-serif text-2xl font-bold text-white mb-1">
+            A-Line <span className="text-gold-400">Realty</span>
+          </p>
+          <p className="text-[10px] font-semibold tracking-[0.22em] uppercase text-neutral-500 mb-4">
+            Bengaluru
+          </p>
+          <p className="text-sm leading-relaxed text-neutral-400 max-w-xs">
+            A trusted real estate consultancy in Bengaluru, helping customers buy
+            residential and commercial properties with professional guidance and
+            a transparent process.
+          </p>
+          <div className="flex gap-3 mt-6">
+            {SOCIALS.map(({ icon: Icon, label, href }) => (
               <a
-                href="https://maps.google.com/?q=Indiranagar+Bangalore"
+                key={label}
+                href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-start gap-2 text-xs text-charcoal-400 hover:text-gold-400 transition-colors"
+                aria-label={label}
+                className="w-8 h-8 rounded-lg bg-neutral-800 flex items-center justify-center text-neutral-400 hover:bg-gold-500 hover:text-white transition-all duration-200"
               >
-                <MapPin size={13} className="text-gold-500 flex-shrink-0 mt-0.5" />
-                No. 42, 100 Feet Road, Indiranagar, Bangalore – 560 038
+                <Icon size={14} />
               </a>
-              <a
-                href="tel:+919876543210"
-                className="flex items-center gap-2 text-xs text-charcoal-400 hover:text-gold-400 transition-colors"
-              >
-                <Phone size={13} className="text-gold-500 flex-shrink-0" />
-                +91 98765 43210
-              </a>
-              <a
-                href="mailto:hello@alinerealty.in"
-                className="flex items-center gap-2 text-xs text-charcoal-400 hover:text-gold-400 transition-colors"
-              >
-                <Mail size={13} className="text-gold-500 flex-shrink-0" />
-                hello@alinerealty.in
-              </a>
-            </div>
-
-            {/* Socials */}
-            <div className="flex gap-3 mt-6">
-              {socials.map(({ icon: Icon, label, href }) => (
-                <a
-                  key={label}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={label}
-                  className="w-8 h-8 flex items-center justify-center border border-charcoal-700 text-charcoal-400 hover:border-gold-500 hover:text-gold-400 transition-all duration-200"
-                >
-                  <Icon size={14} />
-                </a>
-              ))}
-            </div>
+            ))}
           </div>
+        </div>
 
-          {/* Link columns */}
-          {Object.entries(footerLinks).map(([heading, links]) => (
-            <div key={heading}>
-              <h3 className="text-xs font-bold tracking-[0.2em] uppercase text-charcoal-300 mb-5">
-                {heading}
-              </h3>
-              <ul className="space-y-3">
-                {links.map((link) => (
-                  <li key={link.label}>
-                    <button
-                      onClick={() => scrollTo(link.href)}
-                      className="text-xs text-charcoal-500 hover:text-gold-400 transition-colors duration-200 cursor-pointer"
-                    >
-                      {link.label}
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+        {/* Quick links */}
+        <div>
+          <h3 className="text-xs font-bold tracking-[0.18em] uppercase text-neutral-300 mb-5">
+            Quick Links
+          </h3>
+          <ul className="space-y-3">
+            {QUICK_LINKS.map((l) => (
+              <li key={l.label}>
+                <button
+                  onClick={() => scroll(l.href)}
+                  className="text-sm text-neutral-400 hover:text-gold-400 transition-colors cursor-pointer"
+                >
+                  {l.label}
+                </button>
+              </li>
+            ))}
+            {LEGAL_LINKS.map((l) => (
+              <li key={l.label}>
+                <a
+                  href={l.href}
+                  className="text-sm text-neutral-400 hover:text-gold-400 transition-colors"
+                >
+                  {l.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Contact */}
+        <div>
+          <h3 className="text-xs font-bold tracking-[0.18em] uppercase text-neutral-300 mb-5">
+            Contact
+          </h3>
+          <ul className="space-y-4">
+            <li>
+              <a href="tel:+917337861296" className="flex items-start gap-3 text-sm hover:text-gold-400 transition-colors group">
+                <Phone size={14} className="mt-0.5 shrink-0 text-gold-500" />
+                <span>+91 73378 61296</span>
+              </a>
+            </li>
+            <li>
+              <a href="mailto:alinerealty26@gmail.com" className="flex items-start gap-3 text-sm hover:text-gold-400 transition-colors break-all">
+                <Mail size={14} className="mt-0.5 shrink-0 text-gold-500" />
+                <span>alinerealty26@gmail.com</span>
+              </a>
+            </li>
+            <li className="flex items-start gap-3 text-sm">
+              <MapPin size={14} className="mt-0.5 shrink-0 text-gold-500" />
+              <span>Bengaluru, Karnataka, India</span>
+            </li>
+          </ul>
         </div>
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-charcoal-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-charcoal-600">
+      <div className="border-t border-neutral-800">
+        <div className="max-w-6xl mx-auto px-5 sm:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-neutral-600">
           <p>© {new Date().getFullYear()} A-Line Realty. All rights reserved.</p>
           <div className="flex gap-4">
-            <a href="#" className="hover:text-charcoal-400 transition-colors">
-              Privacy Policy
-            </a>
-            <a href="#" className="hover:text-charcoal-400 transition-colors">
-              Terms of Service
-            </a>
-            <a href="#" className="hover:text-charcoal-400 transition-colors">
-              RERA Disclosure
-            </a>
+            <a href="/privacy-policy" className="hover:text-neutral-400 transition-colors">Privacy Policy</a>
+            <a href="/terms" className="hover:text-neutral-400 transition-colors">Terms of Use</a>
           </div>
         </div>
       </div>

@@ -1,0 +1,15 @@
+/* TEAM */
+Founder & Real Estate Consultant: Zakir Ali Mishrikoti
+Contact: alinerealty26@gmail.com
+Location: Bengaluru, Karnataka, India
+
+/* SITE */
+Company: A-Line Realty
+URL: https://www.alinerealty.in
+Language: English (en-IN)
+Doctype: HTML5
+Technology: Next.js 16, TypeScript, Tailwind CSS, Framer Motion
+
+/* THANKS */
+Fonts: Google Fonts (Playfair Display, Inter)
+Icons: Lucide React

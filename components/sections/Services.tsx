@@ -1,102 +1,110 @@
-import {
-  Home,
-  Building2,
-  TrendingUp,
-  FileCheck2,
-  Hammer,
-  Key,
-} from "lucide-react";
-import SectionHeading from "@/components/ui/SectionHeading";
+"use client";
 
-const services = [
+import { motion } from "framer-motion";
+import {
+  Home, TrendingUp, MessageSquare,
+  MapPin, Landmark, FileCheck2,
+} from "lucide-react";
+
+const SERVICES = [
   {
     icon: Home,
-    title: "Residential Sales",
-    description:
-      "Premium apartments, villas, and plotted developments in Bangalore's top residential corridors — North, South, East & West.",
-    tag: "Most Popular",
-  },
-  {
-    icon: Building2,
-    title: "Commercial Properties",
-    description:
-      "Office spaces, retail units, and mixed-use developments across Whitefield, ORR, and Sarjapur Road business hubs.",
-    tag: null,
+    title: "Buying Assistance",
+    desc: "End-to-end support in identifying, evaluating, and purchasing residential or commercial properties suited to your needs and budget.",
   },
   {
     icon: TrendingUp,
     title: "Investment Advisory",
-    description:
-      "Data-driven guidance on high-yield investment properties — pre-launch, under-construction, and ready-to-move options.",
-    tag: "High ROI",
+    desc: "Data-driven guidance on high-return investment opportunities — pre-launch, under-construction, and ready-to-move across Bengaluru.",
+  },
+  {
+    icon: MessageSquare,
+    title: "Property Consultation",
+    desc: "Free one-on-one consultations to understand your goals and provide tailored property recommendations across Bengaluru's top micro-markets.",
+  },
+  {
+    icon: MapPin,
+    title: "Site Visits",
+    desc: "We arrange and accompany you on personalised site visits — coordinating with builders so you can evaluate properties stress-free.",
+  },
+  {
+    icon: Landmark,
+    title: "Home Loan Guidance",
+    desc: "We connect you with leading lenders for competitive rates, assist with documentation, and help you secure fast loan approvals.",
   },
   {
     icon: FileCheck2,
-    title: "Legal & Documentation",
-    description:
-      "Complete assistance with sale agreements, registration, RERA compliance, title verification, and property loans.",
-    tag: null,
-  },
-  {
-    icon: Hammer,
-    title: "Interior Solutions",
-    description:
-      "Turnkey interior design packages through our curated network — transforming your new property into a dream home.",
-    tag: null,
-  },
-  {
-    icon: Key,
-    title: "Rental Management",
-    description:
-      "End-to-end rental management including tenant sourcing, lease agreements, and property maintenance for investors.",
-    tag: null,
+    title: "Documentation Support",
+    desc: "From agreement of sale to stamp duty and registration — our team ensures all documentation is accurate, complete, and legally sound.",
   },
 ];
 
+const fadeUp = {
+  hidden: { opacity: 0, y: 24 },
+  show:   { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+};
+
 export default function Services() {
   return (
-    <section id="services" className="py-24 lg:py-32 bg-charcoal-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeading
-          eyebrow="What We Offer"
-          title="Our Services"
-          subtitle="A comprehensive suite of real estate services, from property discovery to post-purchase support."
-        />
+    <section id="services" className="py-24 lg:py-32 bg-white">
+      <div className="max-w-6xl mx-auto px-5 sm:px-8">
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map(({ icon: Icon, title, description, tag }) => (
-            <div
+        {/* Header */}
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.4 }}
+          variants={{ show: { transition: { staggerChildren: 0.1 } } }}
+          className="text-center max-w-2xl mx-auto mb-14"
+        >
+          <motion.span variants={fadeUp} className="section-pill mb-5 inline-flex">
+            <span className="w-1.5 h-1.5 rounded-full bg-gold-400" />
+            What We Do
+          </motion.span>
+          <motion.h2
+            variants={fadeUp}
+            className="font-serif text-3xl sm:text-4xl font-bold text-neutral-900 leading-tight mb-3"
+          >
+            Our <span className="text-gold-500">Services</span>
+          </motion.h2>
+          <motion.div variants={fadeUp} className="gold-divider mx-auto mb-5" />
+          <motion.p variants={fadeUp} className="text-[15.5px] text-neutral-500 leading-relaxed">
+            A complete range of real estate services designed to make your
+            property journey smooth, informed, and completely transparent.
+          </motion.p>
+        </motion.div>
+
+        {/* Cards */}
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.1 }}
+          variants={{ show: { transition: { staggerChildren: 0.09 } } }}
+          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5"
+        >
+          {SERVICES.map(({ icon: Icon, title, desc }, i) => (
+            <motion.div
               key={title}
-              className="group relative flex flex-col bg-charcoal-800/50 border border-charcoal-700 hover:border-gold-500/60 p-8 transition-all duration-300 hover:shadow-xl hover:shadow-gold-500/5 hover:bg-charcoal-800"
+              variants={fadeUp}
+              className="card-hover group relative bg-white rounded-2xl p-7 border border-neutral-100 shadow-sm hover:border-gold-200 overflow-hidden"
             >
-              {/* Tag */}
-              {tag && (
-                <span className="absolute top-4 right-4 text-[10px] font-bold tracking-widest uppercase px-2 py-1 bg-gold-500/15 text-gold-400 border border-gold-500/30">
-                  {tag}
-                </span>
-              )}
+              {/* Subtle number watermark */}
+              <span className="absolute top-4 right-5 font-serif text-6xl font-bold text-neutral-50 select-none leading-none">
+                {String(i + 1).padStart(2, "0")}
+              </span>
 
-              {/* Icon */}
-              <div className="mb-5 w-14 h-14 flex items-center justify-center bg-charcoal-900 border border-charcoal-700 group-hover:border-gold-500/50 group-hover:bg-gold-500/10 transition-all duration-300">
-                <Icon
-                  size={24}
-                  className="text-charcoal-400 group-hover:text-gold-400 transition-colors duration-300"
-                />
+              <div className="relative z-10">
+                <div className="w-12 h-12 rounded-2xl bg-gold-50 group-hover:bg-gold-100 flex items-center justify-center mb-5 transition-colors duration-300">
+                  <Icon size={22} className="text-gold-500" strokeWidth={1.8} />
+                </div>
+                <h3 className="font-serif text-[17px] font-semibold text-neutral-900 mb-2">
+                  {title}
+                </h3>
+                <p className="text-[14px] text-neutral-500 leading-relaxed">{desc}</p>
               </div>
-
-              <h3 className="font-serif text-xl font-semibold text-white mb-3">
-                {title}
-              </h3>
-
-              <p className="text-charcoal-400 text-sm leading-relaxed flex-1">
-                {description}
-              </p>
-
-              {/* Bottom gold line on hover */}
-              <div className="mt-6 h-px w-0 group-hover:w-full bg-gradient-to-r from-gold-500 to-transparent transition-all duration-500" />
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

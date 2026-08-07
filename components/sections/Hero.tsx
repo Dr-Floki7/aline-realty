@@ -1,143 +1,201 @@
 "use client";
 
-import { ArrowDown, MapPin, Star, TrendingUp } from "lucide-react";
+import { motion } from "framer-motion";
+import { Phone, MessageCircle, ArrowRight, ChevronDown } from "lucide-react";
 
-const stats = [
-  { value: "500+", label: "Properties Sold" },
-  { value: "12+", label: "Years Experience" },
-  { value: "₹2000Cr+", label: "Total Transactions" },
-  { value: "98%", label: "Client Satisfaction" },
-];
+const WA_URL =
+  "https://wa.me/917337861296?text=Hi%20A-Line%20Realty%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services.";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 28 },
+  show:   { opacity: 1, y: 0 },
+};
 
 export default function Hero() {
-  const scrollToAbout = () => {
-    document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
-  };
-
-  const scrollToProjects = () => {
-    document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
-  };
+  const scrollToContact = () =>
+    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
 
   return (
     <section
       id="home"
-      className="relative min-h-screen flex flex-col justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center overflow-hidden bg-white"
       aria-label="Hero"
     >
-      {/* Background */}
-      <div className="absolute inset-0 z-0">
-        {/* Deep dark gradient base */}
-        <div className="absolute inset-0 bg-gradient-to-br from-charcoal-900 via-charcoal-800 to-charcoal-900" />
-        {/* Gold accent radial glow */}
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[900px] h-[900px] rounded-full bg-gold-500/5 blur-[120px]" />
-        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full bg-gold-400/8 blur-[100px]" />
-        {/* Grid texture */}
+      {/* ── Background pattern ── */}
+      <div className="absolute inset-0 pointer-events-none select-none" aria-hidden>
+        {/* Soft gold radial glow — top right */}
+        <div className="absolute -top-32 -right-32 w-[600px] h-[600px] rounded-full bg-gold-100/60 blur-3xl" />
+        {/* Subtle dot grid */}
         <div
-          className="absolute inset-0 opacity-[0.03]"
+          className="absolute inset-0 opacity-[0.035]"
           style={{
             backgroundImage:
-              "linear-gradient(rgba(212,160,23,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(212,160,23,0.5) 1px, transparent 1px)",
-            backgroundSize: "60px 60px",
+              "radial-gradient(circle, #c7a246 1.2px, transparent 1.2px)",
+            backgroundSize: "28px 28px",
           }}
         />
-        {/* Vignette */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,rgba(0,0,0,0.7)_100%)]" />
+        {/* Bottom left accent */}
+        <div className="absolute -bottom-24 -left-24 w-80 h-80 rounded-full bg-gold-50 blur-2xl" />
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-24">
-        <div className="max-w-4xl">
-          {/* Eyebrow badge */}
-          <div className="animate-fade-in-up inline-flex items-center gap-2 mb-6 px-4 py-2 border border-gold-500/40 bg-gold-500/10 backdrop-blur-sm">
-            <MapPin size={13} className="text-gold-400" />
-            <span className="text-xs font-semibold tracking-[0.2em] uppercase text-gold-400">
-              Bangalore's Trusted Channel Partner
-            </span>
-          </div>
+      {/* ── Main content ── */}
+      <div className="relative max-w-6xl mx-auto px-5 sm:px-8 pt-28 pb-20 w-full">
+        <div className="grid lg:grid-cols-2 gap-14 items-center">
 
-          {/* Headline */}
-          <h1 className="animate-fade-in-up-delay-1 font-serif font-bold leading-[1.1] mb-6">
-            <span className="block text-4xl sm:text-6xl lg:text-7xl text-white">
-              Find Your
-            </span>
-            <span className="block text-4xl sm:text-6xl lg:text-7xl gold-shimmer mt-1">
-              Dream Home
-            </span>
-            <span className="block text-4xl sm:text-6xl lg:text-7xl text-white mt-1">
-              in Bangalore
-            </span>
-          </h1>
+          {/* Left — copy */}
+          <motion.div
+            variants={{ show: { transition: { staggerChildren: 0.13 } } }}
+            initial="hidden"
+            animate="show"
+          >
+            {/* Pill */}
+            <motion.div variants={fadeUp}>
+              <span className="section-pill mb-6 inline-flex">
+                <span className="w-1.5 h-1.5 rounded-full bg-gold-400" />
+                Trusted Real Estate Consultancy · Bengaluru
+              </span>
+            </motion.div>
 
-          {/* Subheading */}
-          <p className="animate-fade-in-up-delay-2 text-lg sm:text-xl text-charcoal-300 max-w-2xl leading-relaxed mb-10">
-            A-Line Realty curates premium residential and commercial properties
-            across Bangalore's most coveted neighbourhoods — with unmatched
-            market expertise and white-glove service.
-          </p>
-
-          {/* CTA buttons */}
-          <div className="animate-fade-in-up-delay-3 flex flex-wrap gap-4 mb-16">
-            <button
-              onClick={scrollToProjects}
-              className="inline-flex items-center gap-2 px-8 py-4 text-base font-semibold bg-gold-500 text-white border border-gold-500 hover:bg-gold-400 hover:border-gold-400 transition-all duration-300 shadow-lg hover:shadow-gold-500/30"
+            {/* Headline */}
+            <motion.h1
+              variants={fadeUp}
+              className="font-serif text-4xl sm:text-5xl lg:text-[52px] font-bold text-neutral-900 leading-[1.13] mb-5"
             >
-              <TrendingUp size={18} />
-              Explore Projects
-            </button>
-            <button
-              onClick={scrollToAbout}
-              className="inline-flex items-center gap-2 px-8 py-4 text-base font-semibold bg-transparent text-gold-400 border border-gold-500/60 hover:border-gold-400 hover:text-gold-300 transition-all duration-300"
+              Your Dream Property{" "}
+              <span className="relative inline-block">
+                <span className="text-gold-500">Starts Here</span>
+                <span className="absolute -bottom-1 left-0 w-full h-[3px] bg-gold-300/60 rounded-full" />
+              </span>
+            </motion.h1>
+
+            {/* Sub */}
+            <motion.p
+              variants={fadeUp}
+              className="text-[16.5px] text-neutral-500 leading-relaxed mb-8 max-w-lg"
             >
-              Learn More
-            </button>
-          </div>
+              We help you find, evaluate, and purchase residential &amp; commercial
+              properties across Bengaluru — with expert guidance, zero hidden costs,
+              and complete hand-holding from search to possession.
+            </motion.p>
 
-          {/* Rating badge */}
-          <div className="animate-fade-in-up-delay-4 inline-flex items-center gap-3 px-4 py-3 border border-charcoal-700 bg-charcoal-800/60 backdrop-blur-sm">
-            <div className="flex text-gold-400">
-              {Array.from({ length: 5 }).map((_, i) => (
-                <Star key={i} size={13} fill="currentColor" />
-              ))}
-            </div>
-            <span className="text-sm text-charcoal-200">
-              <strong className="text-white">4.9/5</strong> — Rated by 300+ happy homeowners
-            </span>
-          </div>
-        </div>
-      </div>
-
-      {/* Stats bar */}
-      <div className="relative z-10 border-t border-charcoal-700 bg-charcoal-900/80 backdrop-blur-md">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-charcoal-700">
-            {stats.map((stat) => (
-              <div
-                key={stat.label}
-                className="px-6 py-6 text-center hover:bg-charcoal-800/50 transition-colors duration-200"
+            {/* CTA row */}
+            <motion.div
+              variants={fadeUp}
+              className="flex flex-wrap gap-3 mb-10"
+            >
+              <a
+                href="tel:+917337861296"
+                className="btn-gold flex items-center gap-2 px-6 py-3 text-[14px]"
+                aria-label="Call A-Line Realty"
               >
-                <div className="font-serif text-2xl sm:text-3xl font-bold text-gold-400 mb-1">
-                  {stat.value}
-                </div>
-                <div className="text-xs font-medium uppercase tracking-widest text-charcoal-400">
-                  {stat.label}
+                <Phone size={15} strokeWidth={2.5} />
+                Call Us Now
+              </a>
+              <a
+                href={WA_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-6 py-3 text-[14px] font-semibold rounded-lg bg-[#25D366] text-white hover:bg-[#1ebe5d] transition-all hover:-translate-y-0.5 hover:shadow-md"
+                aria-label="Chat on WhatsApp"
+              >
+                <MessageCircle size={15} strokeWidth={2.5} />
+                WhatsApp
+              </a>
+              <button
+                onClick={scrollToContact}
+                className="btn-outline flex items-center gap-2 px-6 py-3 text-[14px] cursor-pointer"
+              >
+                Contact Us <ArrowRight size={14} />
+              </button>
+            </motion.div>
+
+            {/* Trust badges */}
+            <motion.div
+              variants={fadeUp}
+              className="flex flex-wrap gap-5 text-sm text-neutral-500"
+            >
+              {["250+ Projects", "₹500 Cr+ Deals", "4.9★ Rated"].map((b) => (
+                <span key={b} className="flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-gold-400 shrink-0" />
+                  {b}
+                </span>
+              ))}
+            </motion.div>
+          </motion.div>
+
+          {/* Right — visual card */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
+            className="hidden lg:block"
+            aria-hidden
+          >
+            <div className="relative">
+              {/* Main card */}
+              <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-gold-50 via-white to-gold-100 border border-gold-100 shadow-2xl shadow-gold-200/40 aspect-[4/3] flex items-center justify-center">
+                {/* Geometric pattern fill */}
+                <div className="absolute inset-0 opacity-[0.07]"
+                  style={{
+                    backgroundImage:
+                      "linear-gradient(45deg,#c7a246 25%,transparent 25%)," +
+                      "linear-gradient(-45deg,#c7a246 25%,transparent 25%)," +
+                      "linear-gradient(45deg,transparent 75%,#c7a246 75%)," +
+                      "linear-gradient(-45deg,transparent 75%,#c7a246 75%)",
+                    backgroundSize: "20px 20px",
+                    backgroundPosition: "0 0,0 10px,10px -10px,-10px 0",
+                  }}
+                />
+                <div className="relative z-10 text-center px-10">
+                  <p className="font-serif text-5xl font-bold text-gold-500 mb-2">A-Line</p>
+                  <p className="text-sm font-semibold tracking-[0.3em] uppercase text-neutral-500">
+                    Real Estate · Bengaluru
+                  </p>
                 </div>
               </div>
-            ))}
-          </div>
+
+              {/* Floating stat card 1 */}
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6, duration: 0.5 }}
+                className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl border border-neutral-100 px-5 py-4"
+              >
+                <p className="font-serif text-2xl font-bold text-gold-500">250+</p>
+                <p className="text-xs text-neutral-500 font-medium mt-0.5">Projects Sold</p>
+              </motion.div>
+
+              {/* Floating stat card 2 */}
+              <motion.div
+                initial={{ opacity: 0, y: -16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.7, duration: 0.5 }}
+                className="absolute -top-5 -right-5 bg-white rounded-2xl shadow-xl border border-neutral-100 px-5 py-4"
+              >
+                <p className="font-serif text-2xl font-bold text-gold-500">4.9★</p>
+                <p className="text-xs text-neutral-500 font-medium mt-0.5">Client Rating</p>
+              </motion.div>
+            </div>
+          </motion.div>
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <button
-        onClick={scrollToAbout}
-        className="absolute bottom-36 right-8 lg:right-16 z-10 flex flex-col items-center gap-2 text-charcoal-500 hover:text-gold-400 transition-colors duration-300 cursor-pointer"
+      {/* Scroll cue */}
+      <motion.button
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.2 }}
+        onClick={() =>
+          document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })
+        }
         aria-label="Scroll down"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-neutral-400 hover:text-gold-500 transition-colors cursor-pointer"
       >
-        <span className="text-[10px] tracking-[0.2em] uppercase rotate-90 mb-1">
-          Scroll
-        </span>
-        <ArrowDown size={18} className="animate-bounce" />
-      </button>
+        <span className="text-[10px] tracking-widest uppercase font-medium">Explore</span>
+        <motion.div animate={{ y: [0, 5, 0] }} transition={{ repeat: Infinity, duration: 1.5 }}>
+          <ChevronDown size={18} />
+        </motion.div>
+      </motion.button>
     </section>
   );
 }

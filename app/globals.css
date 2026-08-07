@@ -1,136 +1,149 @@
 @import "tailwindcss";
 
 @theme inline {
-  /* Gold palette */
-  --color-gold-50: #fdf9ee;
-  --color-gold-100: #f9eecc;
-  --color-gold-200: #f2d98a;
-  --color-gold-300: #e9c04a;
-  --color-gold-400: #d4a017;
-  --color-gold-500: #b8860b;
-  --color-gold-600: #9a6f08;
-  --color-gold-700: #7a5506;
-  --color-gold-800: #5c3f04;
-  --color-gold-900: #3d2a02;
+  /* Brand gold */
+  --color-gold-50:  #fdf8ec;
+  --color-gold-100: #f9edca;
+  --color-gold-200: #f0d38a;
+  --color-gold-300: #e6b84a;
+  --color-gold-400: #d4a136;
+  --color-gold-500: #c7a246;
+  --color-gold-600: #a8842a;
+  --color-gold-700: #876619;
+  --color-gold-800: #664e10;
+  --color-gold-900: #3d2e08;
 
-  /* Neutral / black */
-  --color-charcoal-900: #0a0a0a;
-  --color-charcoal-800: #111111;
-  --color-charcoal-700: #1a1a1a;
-  --color-charcoal-600: #2a2a2a;
-  --color-charcoal-500: #3a3a3a;
-  --color-charcoal-400: #5a5a5a;
-  --color-charcoal-300: #8a8a8a;
-  --color-charcoal-200: #b0b0b0;
-  --color-charcoal-100: #d4d4d4;
-  --color-charcoal-50: #f5f5f5;
+  /* Neutral */
+  --color-neutral-950: #0f0f0f;
+  --color-neutral-900: #1a1a1a;
+  --color-neutral-800: #2c2c2c;
+  --color-neutral-700: #3d3d3d;
+  --color-neutral-600: #5a5a5a;
+  --color-neutral-500: #737373;
+  --color-neutral-400: #9a9a9a;
+  --color-neutral-300: #b8b8b8;
+  --color-neutral-200: #d4d4d4;
+  --color-neutral-100: #e8e8e8;
+  --color-neutral-50:  #f7f7f7;
 
   --font-serif: var(--font-playfair);
-  --font-sans: var(--font-inter);
+  --font-sans:  var(--font-inter);
 }
 
-html {
-  scroll-behavior: smooth;
-}
+/* ── Base ──────────────────────────────────────────────── */
+html  { scroll-behavior: smooth; }
 
 body {
-  background: #0a0a0a;
-  color: #f5f5f5;
-  font-family: var(--font-inter), system-ui, sans-serif;
+  background-color: #ffffff;
+  color: #1a1a1a;
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Gold shimmer animation */
-@keyframes shimmer {
-  0% { background-position: -200% center; }
-  100% { background-position: 200% center; }
+section[id] { scroll-margin-top: 72px; }
+
+/* ── Scrollbar ─────────────────────────────────────────── */
+::-webkit-scrollbar       { width: 5px; }
+::-webkit-scrollbar-track { background: #f7f7f7; }
+::-webkit-scrollbar-thumb { background: #c7a246; border-radius: 4px; }
+
+/* ── Gold underline decoration ─────────────────────────── */
+.gold-underline {
+  display: inline-block;
+  position: relative;
+}
+.gold-underline::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 48px;
+  height: 3px;
+  border-radius: 2px;
+  background: #c7a246;
 }
 
-.gold-shimmer {
+/* ── Gradient hero overlay ─────────────────────────────── */
+.hero-overlay {
   background: linear-gradient(
-    90deg,
-    #b8860b 0%,
-    #e9c04a 30%,
-    #f2d98a 50%,
-    #e9c04a 70%,
-    #b8860b 100%
+    135deg,
+    rgba(255,255,255,0.97) 0%,
+    rgba(255,255,255,0.92) 50%,
+    rgba(255,248,230,0.85) 100%
   );
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: shimmer 4s linear infinite;
 }
 
-/* Fade-in-up animation */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(32px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* ── Card hover lift ───────────────────────────────────── */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(199,162,70,0.12);
 }
 
-.animate-fade-in-up {
-  animation: fadeInUp 0.8s ease forwards;
+/* ── Button styles ─────────────────────────────────────── */
+.btn-gold {
+  background: #c7a246;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+}
+.btn-gold:hover {
+  background: #a8842a;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(199,162,70,0.35);
 }
 
-.animate-fade-in-up-delay-1 {
-  animation: fadeInUp 0.8s ease 0.15s forwards;
-  opacity: 0;
+.btn-outline {
+  border: 2px solid #c7a246;
+  color: #c7a246;
+  font-weight: 600;
+  border-radius: 8px;
+  background: transparent;
+  transition: background 0.2s, color 0.2s, transform 0.15s;
+}
+.btn-outline:hover {
+  background: #c7a246;
+  color: #fff;
+  transform: translateY(-1px);
 }
 
-.animate-fade-in-up-delay-2 {
-  animation: fadeInUp 0.8s ease 0.3s forwards;
-  opacity: 0;
+.btn-white {
+  background: #fff;
+  color: #1a1a1a;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+}
+.btn-white:hover {
+  background: #f7f7f7;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
 }
 
-.animate-fade-in-up-delay-3 {
-  animation: fadeInUp 0.8s ease 0.45s forwards;
-  opacity: 0;
+/* ── Section label pill ────────────────────────────────── */
+.section-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 14px;
+  background: #fdf8ec;
+  border: 1px solid #f0d38a;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #a8842a;
 }
 
-.animate-fade-in-up-delay-4 {
-  animation: fadeInUp 0.8s ease 0.6s forwards;
-  opacity: 0;
-}
-
-/* Gold divider line */
-.gold-line {
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #b8860b, #e9c04a, #b8860b, transparent);
-}
-
-/* Section scroll target offset */
-section[id] {
-  scroll-margin-top: 80px;
-}
-
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-track {
-  background: #111111;
-}
-::-webkit-scrollbar-thumb {
-  background: #b8860b;
-  border-radius: 3px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #e9c04a;
-}
-
-/* Hover gold border utility */
-.hover-gold-border {
-  border: 1px solid transparent;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-.hover-gold-border:hover {
-  border-color: #b8860b;
-  box-shadow: 0 0 20px rgba(184, 134, 11, 0.15);
+/* ── Divider ───────────────────────────────────────────── */
+.gold-divider {
+  width: 48px;
+  height: 3px;
+  background: #c7a246;
+  border-radius: 2px;
 }

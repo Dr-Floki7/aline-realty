@@ -5,7 +5,7 @@ import "./globals.css";
 const playfair = Playfair_Display({
   variable: "--font-playfair",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800", "900"],
+  weight: ["400", "500", "600", "700", "800"],
   display: "swap",
 });
 
@@ -16,156 +16,132 @@ const inter = Inter({
   display: "swap",
 });
 
-const BASE_URL = "https://www.alinerealty.in";
+const BASE = "https://www.alinerealty.in";
 
+/* ── Structured data ───────────────────────────────────── */
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["Organization", "RealEstateAgent", "LocalBusiness"],
+      "@id": `${BASE}/#organization`,
+      name: "A-Line Realty",
+      url: BASE,
+      logo: { "@type": "ImageObject", url: `${BASE}/logo.png` },
+      description:
+        "A-Line Realty is a trusted real estate consultancy in Bengaluru, helping customers buy residential and commercial properties with professional guidance and a transparent process.",
+      foundingDate: "2012",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Bengaluru",
+        addressRegion: "Karnataka",
+        addressCountry: "IN",
+        postalCode: "560001",
+      },
+      geo: { "@type": "GeoCoordinates", latitude: 12.9716, longitude: 77.5946 },
+      telephone: "+91-73378-61296",
+      email: "alinerealty26@gmail.com",
+      openingHoursSpecification: [
+        {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+          opens: "09:00",
+          closes: "19:00",
+        },
+      ],
+      areaServed: { "@type": "City", name: "Bengaluru" },
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: "4.9",
+        reviewCount: "120",
+        bestRating: "5",
+      },
+      sameAs: [
+        "https://www.facebook.com/alinerealty",
+        "https://www.instagram.com/alinerealty",
+        "https://wa.me/917337861296",
+      ],
+      founder: {
+        "@type": "Person",
+        name: "Zakir Ali Mishrikoti",
+        jobTitle: "Founder",
+      },
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${BASE}/#website`,
+      url: BASE,
+      name: "A-Line Realty",
+      publisher: { "@id": `${BASE}/#organization` },
+      inLanguage: "en-IN",
+    },
+  ],
+};
+
+/* ── Metadata ──────────────────────────────────────────── */
 export const metadata: Metadata = {
-  metadataBase: new URL(BASE_URL),
-
-  /* ── Core ─────────────────────────────────────────────── */
+  metadataBase: new URL(BASE),
   title: {
-    default: "A-Line Realty | Premium Real Estate Channel Partner in Bangalore",
-    template: "%s | A-Line Realty Bangalore",
+    default: "A-Line Realty | Trusted Real Estate Consultancy in Bengaluru",
+    template: "%s | A-Line Realty",
   },
   description:
-    "A-Line Realty is Bangalore's trusted real estate channel partner since 2012. Explore premium residential apartments, luxury villas, commercial spaces, and investment-grade properties across Whitefield, Sarjapur, Indiranagar, Koramangala, Hebbal & Devanahalli.",
+    "A-Line Realty is a trusted real estate consultancy in Bengaluru. We help you buy residential and commercial properties with expert guidance, site visit support, home loan assistance, and a fully transparent process.",
   keywords: [
-    "real estate Bangalore",
-    "luxury properties Bangalore",
-    "channel partner Bangalore",
-    "buy flat Bangalore",
-    "A-Line Realty",
-    "residential properties Bangalore",
-    "commercial real estate Bangalore",
-    "new projects Bangalore 2024",
-    "Prestige Sobha Brigade projects",
-    "Whitefield property for sale",
-    "Sarjapur Road apartments",
-    "real estate investment Bangalore",
-    "RERA registered properties",
-    "2 BHK 3 BHK flat Bangalore",
-    "real estate agent Bangalore",
+    "real estate Bengaluru","real estate Bangalore","property consultant Bengaluru",
+    "buy flat Bangalore","residential property Bangalore","commercial property Bangalore",
+    "A-Line Realty","real estate agent Bangalore","home loan guidance Bengaluru",
+    "site visit Bangalore","property investment Bengaluru","Zakir Ali Mishrikoti",
   ],
-  authors: [{ name: "A-Line Realty", url: BASE_URL }],
+  authors: [{ name: "A-Line Realty", url: BASE }],
   creator: "A-Line Realty",
   publisher: "A-Line Realty",
-  category: "Real Estate",
-
-  /* ── Canonical & Robots ───────────────────────────────── */
-  alternates: {
-    canonical: BASE_URL,
-    languages: {
-      "en-IN": BASE_URL,
-      "en-US": BASE_URL,
-    },
-  },
+  alternates: { canonical: BASE },
   robots: {
-    index: true,
-    follow: true,
-    nocache: false,
-    googleBot: {
-      index: true,
-      follow: true,
-      noimageindex: false,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
+    index: true, follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
   },
-
-  /* ── Open Graph ───────────────────────────────────────── */
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: BASE_URL,
+    url: BASE,
     siteName: "A-Line Realty",
-    title: "A-Line Realty | Premium Real Estate Channel Partner in Bangalore",
+    title: "A-Line Realty | Trusted Real Estate Consultancy in Bengaluru",
     description:
-      "Discover premium residential and commercial properties in Bangalore with A-Line Realty — 12+ years of trust, 500+ properties sold, ₹2000 Cr+ in transactions.",
-    images: [
-      {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "A-Line Realty — Premium Real Estate in Bangalore",
-        type: "image/jpeg",
-      },
-    ],
+      "Buy residential or commercial property in Bengaluru with confidence. A-Line Realty offers expert guidance, site visits, home loan support, and transparent dealings.",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "A-Line Realty Bengaluru" }],
   },
-
-  /* ── Twitter / X Card ────────────────────────────────── */
   twitter: {
     card: "summary_large_image",
-    title: "A-Line Realty | Premium Real Estate in Bangalore",
-    description:
-      "Bangalore's trusted real estate channel partner since 2012. 500+ properties, ₹2000 Cr+ transactions, 98% client satisfaction.",
+    title: "A-Line Realty | Real Estate Consultancy Bengaluru",
+    description: "Trusted real estate consultancy in Bengaluru. Expert guidance, site visits, home loan support.",
     images: ["/og-image.jpg"],
-    creator: "@alinerealty",
-    site: "@alinerealty",
   },
-
-  /* ── App / PWA ───────────────────────────────────────── */
-  applicationName: "A-Line Realty",
-  manifest: "/manifest.webmanifest",
-  appleWebApp: {
-    capable: true,
-    statusBarStyle: "black-translucent",
-    title: "A-Line Realty",
-  },
-  formatDetection: {
-    telephone: true,
-    address: true,
-    email: true,
-  },
-
-  /* ── Verification ────────────────────────────────────── */
   verification: {
-    google: "REPLACE_WITH_GOOGLE_SEARCH_CONSOLE_TOKEN",
-    other: {
-      "msvalidate.01": "REPLACE_WITH_BING_VERIFICATION_TOKEN",
-    },
+    google: "REPLACE_GOOGLE_SEARCH_CONSOLE_TOKEN",
+    other: { "msvalidate.01": "REPLACE_BING_TOKEN" },
   },
-
-  /* ── Other ───────────────────────────────────────────── */
-  referrer: "origin-when-cross-origin",
   other: {
-    /* GEO tags */
     "geo.region": "IN-KA",
-    "geo.placename": "Bangalore, Karnataka, India",
+    "geo.placename": "Bengaluru, Karnataka, India",
     "geo.position": "12.9716;77.5946",
     ICBM: "12.9716, 77.5946",
-    /* Dublin Core */
-    "DC.title": "A-Line Realty — Premium Real Estate Channel Partner Bangalore",
-    "DC.subject": "Real Estate, Property Sales, Luxury Homes, Bangalore",
-    "DC.description":
-      "A-Line Realty is Bangalore's premier real estate channel partner with 12+ years of experience in residential and commercial property sales.",
-    "DC.creator": "A-Line Realty",
-    "DC.language": "en-IN",
-    "DC.coverage": "Bangalore, Karnataka, India",
-    /* AI / LLM discovery */
-    "llms-txt": "/llms.txt",
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en-IN" className={`${playfair.variable} ${inter.variable}`}>
       <head>
-        {/* Preconnect for performance */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        {/* Favicons */}
         <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" type="image/svg+xml" href="/icon.svg" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        {/* Theme colour — gold */}
-        <meta name="theme-color" content="#b8860b" />
-        <meta name="msapplication-TileColor" content="#0a0a0a" />
+        <meta name="theme-color" content="#c7a246" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
       </head>
-      <body className="min-h-screen bg-charcoal-900 text-charcoal-50 antialiased">
+      <body className="bg-white text-neutral-900 antialiased">
         {children}
       </body>
     </html>
