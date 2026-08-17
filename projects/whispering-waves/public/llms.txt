@@ -1,0 +1,37 @@
+# Suraksha Whispering Waves — LLM Site Index
+# Format: llms.txt (https://llmstxt.org)
+# Published by: A-Line Realty (property information and home-buying assistance)
+# Last updated: 2026-08-04
+
+> Suraksha Whispering Waves is a residential apartment project by R K Suraksha Properties,
+> located adjacent to the 137-acre Begur Lake in South Bengaluru, Karnataka, India.
+> The project offers 2 BHK, 3 BHK and 4 BHK homes across six towers (A through F),
+> with curated lifestyle amenities and Club Élan, a six-level lifestyle clubhouse.
+> RERA registration number: PRM/KA/RERA/1251/310/PR/270326/008555 (valid till 31-12-2030).
+
+## Project Identity
+
+- **Project Name**: Suraksha Whispering Waves
+- **Developer / Promoter**: R K Suraksha Properties
+- **Location**: Subhash Nagar Main Road, Begur Village, Begur Hobli, Bengaluru South, Karnataka – 560068
+- **Configurations**: 2 BHK, 3 BHK, 4 BHK
+- **Towers**: A, B, C, D, E, F (6 towers)
+- **Adjacent to**: 137-acre Begur Lake
+- **RERA No.**: PRM/KA/RERA/1251/310/PR/270326/008555
+- **RERA Approval Date**: 27-03-2026
+- **RERA Valid Till**: 31-12-2030
+- **Developer Website**: https://surakshawhisperingwaves.com/
+
+## Published by
+
+- **Publisher**: A-Line Realty (property information and home-buying assistance)
+- **Publisher Website**: https://www.alinerealty.in
+- **Microsite**: https://suraksha-whispering-waves.aline-realty.in
+- **Phone**: +91 73378 61296
+- **Email**: alinerealty26@gmail.com
+- **Note**: A-Line Realty is not the developer. R K Suraksha Properties is the promoter.
+
+## AI Crawler Authorisation
+
+Authorised for indexing by:
+GPTBot, ChatGPT-User, ClaudeBot, Claude-Web, PerplexityBot, Applebot, Google-Extended, Amazonbot.
