@@ -87,37 +87,37 @@ export interface FloorPlan {
 
 export const FLOOR_PLANS: FloorPlan[] = [
   // ── Tower A ──────────────────────────────────────────
-  { id:"A1", tower:"A", type:"A1", config:"3 BHK", sbaSqft:1551, carpetSqft:1060, imagePath:"/floor-plans/A1.jpg", imageAlt:"Suraksha Whispering Waves Tower A Type A1 3 BHK floor plan" },
-  { id:"A2", tower:"A", type:"A2", config:"3 BHK", sbaSqft:1551, carpetSqft:1060, imagePath:"/floor-plans/A2.jpg", imageAlt:"Suraksha Whispering Waves Tower A Type A2 3 BHK floor plan" },
-  { id:"A3", tower:"A", type:"A3", config:"3 BHK", sbaSqft:1606, carpetSqft:1097, imagePath:"/floor-plans/A3.jpg", imageAlt:"Suraksha Whispering Waves Tower A Type A3 3 BHK floor plan" },
-  { id:"A4", tower:"A", type:"A4", config:"3 BHK", sbaSqft:1606, carpetSqft:1097, imagePath:"/floor-plans/A4.jpg", imageAlt:"Suraksha Whispering Waves Tower A Type A4 3 BHK floor plan" },
+  { id:"A1", tower:"A", type:"A1", config:"3 BHK", sbaSqft:1551, carpetSqft:1060, imagePath:"/floor-plans/A1.svg", imageAlt:"Suraksha Whispering Waves Tower A Type A1 3 BHK floor plan" },
+  { id:"A2", tower:"A", type:"A2", config:"3 BHK", sbaSqft:1551, carpetSqft:1060, imagePath:"/floor-plans/A2.svg", imageAlt:"Suraksha Whispering Waves Tower A Type A2 3 BHK floor plan" },
+  { id:"A3", tower:"A", type:"A3", config:"3 BHK", sbaSqft:1606, carpetSqft:1097, imagePath:"/floor-plans/A3.svg", imageAlt:"Suraksha Whispering Waves Tower A Type A3 3 BHK floor plan" },
+  { id:"A4", tower:"A", type:"A4", config:"3 BHK", sbaSqft:1606, carpetSqft:1097, imagePath:"/floor-plans/A4.svg", imageAlt:"Suraksha Whispering Waves Tower A Type A4 3 BHK floor plan" },
   // ── Tower B ──────────────────────────────────────────
-  { id:"B1", tower:"B", type:"B1", config:"3 BHK", sbaSqft:1551, carpetSqft:1060, imagePath:"/floor-plans/B1.jpg", imageAlt:"Suraksha Whispering Waves Tower B Type B1 3 BHK floor plan" },
-  { id:"B2", tower:"B", type:"B2", config:"3 BHK", sbaSqft:1551, carpetSqft:1060, imagePath:"/floor-plans/B2.jpg", imageAlt:"Suraksha Whispering Waves Tower B Type B2 3 BHK floor plan" },
-  { id:"B3", tower:"B", type:"B3", config:"3 BHK", sbaSqft:1606, carpetSqft:1097, imagePath:"/floor-plans/B3.jpg", imageAlt:"Suraksha Whispering Waves Tower B Type B3 3 BHK floor plan" },
-  { id:"B4", tower:"B", type:"B4", config:"3 BHK", sbaSqft:1606, carpetSqft:1097, imagePath:"/floor-plans/B4.jpg", imageAlt:"Suraksha Whispering Waves Tower B Type B4 3 BHK floor plan" },
+  { id:"B1", tower:"B", type:"B1", config:"3 BHK", sbaSqft:1551, carpetSqft:1060, imagePath:"/floor-plans/B1.svg", imageAlt:"Suraksha Whispering Waves Tower B Type B1 3 BHK floor plan" },
+  { id:"B2", tower:"B", type:"B2", config:"3 BHK", sbaSqft:1551, carpetSqft:1060, imagePath:"/floor-plans/B2.svg", imageAlt:"Suraksha Whispering Waves Tower B Type B2 3 BHK floor plan" },
+  { id:"B3", tower:"B", type:"B3", config:"3 BHK", sbaSqft:1606, carpetSqft:1097, imagePath:"/floor-plans/B3.svg", imageAlt:"Suraksha Whispering Waves Tower B Type B3 3 BHK floor plan" },
+  { id:"B4", tower:"B", type:"B4", config:"3 BHK", sbaSqft:1606, carpetSqft:1097, imagePath:"/floor-plans/B4.svg", imageAlt:"Suraksha Whispering Waves Tower B Type B4 3 BHK floor plan" },
   // ── Tower C ──────────────────────────────────────────
-  { id:"C1", tower:"C", type:"C1", config:"2 BHK", sbaSqft:1215, carpetSqft:831,  imagePath:"/floor-plans/C1.jpg", imageAlt:"Suraksha Whispering Waves Tower C Type C1 2 BHK floor plan" },
-  { id:"C2", tower:"C", type:"C2", config:"2 BHK", sbaSqft:1215, carpetSqft:831,  imagePath:"/floor-plans/C2.jpg", imageAlt:"Suraksha Whispering Waves Tower C Type C2 2 BHK floor plan" },
-  { id:"C3", tower:"C", type:"C3", config:"2 BHK", sbaSqft:1267, carpetSqft:866,  imagePath:"/floor-plans/C3.jpg", imageAlt:"Suraksha Whispering Waves Tower C Type C3 2 BHK floor plan" },
-  { id:"C4", tower:"C", type:"C4", config:"2 BHK", sbaSqft:1267, carpetSqft:866,  imagePath:"/floor-plans/C4.jpg", imageAlt:"Suraksha Whispering Waves Tower C Type C4 2 BHK floor plan" },
+  { id:"C1", tower:"C", type:"C1", config:"2 BHK", sbaSqft:1215, carpetSqft:831,  imagePath:"/floor-plans/C1.svg", imageAlt:"Suraksha Whispering Waves Tower C Type C1 2 BHK floor plan" },
+  { id:"C2", tower:"C", type:"C2", config:"2 BHK", sbaSqft:1215, carpetSqft:831,  imagePath:"/floor-plans/C2.svg", imageAlt:"Suraksha Whispering Waves Tower C Type C2 2 BHK floor plan" },
+  { id:"C3", tower:"C", type:"C3", config:"2 BHK", sbaSqft:1267, carpetSqft:866,  imagePath:"/floor-plans/C3.svg", imageAlt:"Suraksha Whispering Waves Tower C Type C3 2 BHK floor plan" },
+  { id:"C4", tower:"C", type:"C4", config:"2 BHK", sbaSqft:1267, carpetSqft:866,  imagePath:"/floor-plans/C4.svg", imageAlt:"Suraksha Whispering Waves Tower C Type C4 2 BHK floor plan" },
   // ── Tower D ──────────────────────────────────────────
-  { id:"D1", tower:"D", type:"D1", config:"2 BHK", sbaSqft:1215, carpetSqft:831,  imagePath:"/floor-plans/D1.jpg", imageAlt:"Suraksha Whispering Waves Tower D Type D1 2 BHK floor plan" },
-  { id:"D2", tower:"D", type:"D2", config:"2 BHK", sbaSqft:1215, carpetSqft:831,  imagePath:"/floor-plans/D2.jpg", imageAlt:"Suraksha Whispering Waves Tower D Type D2 2 BHK floor plan" },
-  { id:"D3", tower:"D", type:"D3", config:"2 BHK", sbaSqft:1267, carpetSqft:866,  imagePath:"/floor-plans/D3.jpg", imageAlt:"Suraksha Whispering Waves Tower D Type D3 2 BHK floor plan" },
-  { id:"D4", tower:"D", type:"D4", config:"2 BHK", sbaSqft:1267, carpetSqft:866,  imagePath:"/floor-plans/D4.jpg", imageAlt:"Suraksha Whispering Waves Tower D Type D4 2 BHK floor plan" },
+  { id:"D1", tower:"D", type:"D1", config:"2 BHK", sbaSqft:1215, carpetSqft:831,  imagePath:"/floor-plans/D1.svg", imageAlt:"Suraksha Whispering Waves Tower D Type D1 2 BHK floor plan" },
+  { id:"D2", tower:"D", type:"D2", config:"2 BHK", sbaSqft:1215, carpetSqft:831,  imagePath:"/floor-plans/D2.svg", imageAlt:"Suraksha Whispering Waves Tower D Type D2 2 BHK floor plan" },
+  { id:"D3", tower:"D", type:"D3", config:"2 BHK", sbaSqft:1267, carpetSqft:866,  imagePath:"/floor-plans/D3.svg", imageAlt:"Suraksha Whispering Waves Tower D Type D3 2 BHK floor plan" },
+  { id:"D4", tower:"D", type:"D4", config:"2 BHK", sbaSqft:1267, carpetSqft:866,  imagePath:"/floor-plans/D4.svg", imageAlt:"Suraksha Whispering Waves Tower D Type D4 2 BHK floor plan" },
   // ── Tower E ──────────────────────────────────────────
-  { id:"E1", tower:"E", type:"E1", config:"3 BHK", sbaSqft:1782, carpetSqft:1218, imagePath:"/floor-plans/E1.jpg", imageAlt:"Suraksha Whispering Waves Tower E Type E1 3 BHK floor plan" },
-  { id:"E2", tower:"E", type:"E2", config:"3 BHK", sbaSqft:1782, carpetSqft:1218, imagePath:"/floor-plans/E2.jpg", imageAlt:"Suraksha Whispering Waves Tower E Type E2 3 BHK floor plan" },
-  { id:"E3", tower:"E", type:"E3", config:"3 BHK", sbaSqft:1844, carpetSqft:1260, imagePath:"/floor-plans/E3.jpg", imageAlt:"Suraksha Whispering Waves Tower E Type E3 3 BHK floor plan" },
-  { id:"E4", tower:"E", type:"E4", config:"3 BHK", sbaSqft:1844, carpetSqft:1260, imagePath:"/floor-plans/E4.jpg", imageAlt:"Suraksha Whispering Waves Tower E Type E4 3 BHK floor plan" },
+  { id:"E1", tower:"E", type:"E1", config:"3 BHK", sbaSqft:1782, carpetSqft:1218, imagePath:"/floor-plans/E1.svg", imageAlt:"Suraksha Whispering Waves Tower E Type E1 3 BHK floor plan" },
+  { id:"E2", tower:"E", type:"E2", config:"3 BHK", sbaSqft:1782, carpetSqft:1218, imagePath:"/floor-plans/E2.svg", imageAlt:"Suraksha Whispering Waves Tower E Type E2 3 BHK floor plan" },
+  { id:"E3", tower:"E", type:"E3", config:"3 BHK", sbaSqft:1844, carpetSqft:1260, imagePath:"/floor-plans/E3.svg", imageAlt:"Suraksha Whispering Waves Tower E Type E3 3 BHK floor plan" },
+  { id:"E4", tower:"E", type:"E4", config:"3 BHK", sbaSqft:1844, carpetSqft:1260, imagePath:"/floor-plans/E4.svg", imageAlt:"Suraksha Whispering Waves Tower E Type E4 3 BHK floor plan" },
   // ── Tower F ──────────────────────────────────────────
-  { id:"F1", tower:"F", type:"F1", config:"4 BHK", sbaSqft:2467, carpetSqft:1686, imagePath:"/floor-plans/F1.jpg", imageAlt:"Suraksha Whispering Waves Tower F Type F1 4 BHK floor plan" },
-  { id:"F2", tower:"F", type:"F2", config:"4 BHK", sbaSqft:2467, carpetSqft:1686, imagePath:"/floor-plans/F2.jpg", imageAlt:"Suraksha Whispering Waves Tower F Type F2 4 BHK floor plan" },
-  { id:"F3", tower:"F", type:"F3", config:"4 BHK", sbaSqft:2512, carpetSqft:1717, imagePath:"/floor-plans/F3.jpg", imageAlt:"Suraksha Whispering Waves Tower F Type F3 4 BHK floor plan" },
-  { id:"F4", tower:"F", type:"F4", config:"4 BHK", sbaSqft:2512, carpetSqft:1717, imagePath:"/floor-plans/F4.jpg", imageAlt:"Suraksha Whispering Waves Tower F Type F4 4 BHK floor plan" },
-  { id:"F5", tower:"F", type:"F5", config:"4 BHK", sbaSqft:2560, carpetSqft:1749, imagePath:"/floor-plans/F5.jpg", imageAlt:"Suraksha Whispering Waves Tower F Type F5 4 BHK floor plan" },
-  { id:"F6", tower:"F", type:"F6", config:"4 BHK", sbaSqft:2560, carpetSqft:1749, imagePath:"/floor-plans/F6.jpg", imageAlt:"Suraksha Whispering Waves Tower F Type F6 4 BHK floor plan" },
+  { id:"F1", tower:"F", type:"F1", config:"4 BHK", sbaSqft:2467, carpetSqft:1686, imagePath:"/floor-plans/F1.svg", imageAlt:"Suraksha Whispering Waves Tower F Type F1 4 BHK floor plan" },
+  { id:"F2", tower:"F", type:"F2", config:"4 BHK", sbaSqft:2467, carpetSqft:1686, imagePath:"/floor-plans/F2.svg", imageAlt:"Suraksha Whispering Waves Tower F Type F2 4 BHK floor plan" },
+  { id:"F3", tower:"F", type:"F3", config:"4 BHK", sbaSqft:2512, carpetSqft:1717, imagePath:"/floor-plans/F3.svg", imageAlt:"Suraksha Whispering Waves Tower F Type F3 4 BHK floor plan" },
+  { id:"F4", tower:"F", type:"F4", config:"4 BHK", sbaSqft:2512, carpetSqft:1717, imagePath:"/floor-plans/F4.svg", imageAlt:"Suraksha Whispering Waves Tower F Type F4 4 BHK floor plan" },
+  { id:"F5", tower:"F", type:"F5", config:"4 BHK", sbaSqft:2560, carpetSqft:1749, imagePath:"/floor-plans/F5.svg", imageAlt:"Suraksha Whispering Waves Tower F Type F5 4 BHK floor plan" },
+  { id:"F6", tower:"F", type:"F6", config:"4 BHK", sbaSqft:2560, carpetSqft:1749, imagePath:"/floor-plans/F6.svg", imageAlt:"Suraksha Whispering Waves Tower F Type F6 4 BHK floor plan" },
 ];
 
 // ── Amenities ─────────────────────────────────────────────────────────────────

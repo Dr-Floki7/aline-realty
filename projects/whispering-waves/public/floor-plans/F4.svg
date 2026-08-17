@@ -1,0 +1,42 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 380" width="400" height="380">
+  <!-- Background -->
+  <rect width="400" height="380" fill="#fdf8ec"/>
+  <!-- Grid lines -->
+  <line x1="40" y1="40" x2="40" y2="340" stroke="#c99830" stroke-width="0.4" opacity="0.3"/>
+  <line x1="360" y1="40" x2="360" y2="340" stroke="#c99830" stroke-width="0.4" opacity="0.3"/>
+  <line x1="40" y1="40" x2="360" y2="40" stroke="#c99830" stroke-width="0.4" opacity="0.3"/>
+  <line x1="40" y1="340" x2="360" y2="340" stroke="#c99830" stroke-width="0.4" opacity="0.3"/>
+  <!-- Outer boundary -->
+  <rect x="36" y="36" width="328" height="308" fill="none" stroke="#c99830" stroke-width="2" rx="2"/>
+  <!-- Room layout -->
+  <!-- Master Bedroom -->
+  <rect x="40" y="40" width="120" height="100" fill="white" stroke="#c99830" stroke-width="1.5" rx="2"/>
+  <text x="100" y="94" text-anchor="middle" font-family="Arial,sans-serif" font-size="8" fill="#78350f">Master Bed</text>
+  <!-- Bedroom 2 -->
+  <rect x="170" y="40" width="90" height="100" fill="white" stroke="#c99830" stroke-width="1.5" rx="2"/>
+  <text x="215" y="94" text-anchor="middle" font-family="Arial,sans-serif" font-size="8" fill="#78350f">Bedroom 2</text>
+  <!-- Bedroom 3 -->
+  <rect x="270" y="40" width="90" height="100" fill="white" stroke="#c99830" stroke-width="1.5" rx="2"/>
+  <text x="315" y="94" text-anchor="middle" font-family="Arial,sans-serif" font-size="8" fill="#78350f">Bedroom 3</text>
+  <!-- Bedroom 4 -->
+  <rect x="40" y="150" width="90" height="90" fill="white" stroke="#c99830" stroke-width="1.5" rx="2"/>
+  <text x="85" y="199" text-anchor="middle" font-family="Arial,sans-serif" font-size="8" fill="#78350f">Bedroom 4</text>
+  <!-- Living -->
+  <rect x="140" y="150" width="140" height="90" fill="white" stroke="#c99830" stroke-width="1.5" rx="2"/>
+  <text x="210" y="199" text-anchor="middle" font-family="Arial,sans-serif" font-size="9" fill="#78350f">Living / Dining</text>
+  <!-- Kitchen -->
+  <rect x="290" y="150" width="70" height="90" fill="white" stroke="#c99830" stroke-width="1.5" rx="2"/>
+  <text x="325" y="199" text-anchor="middle" font-family="Arial,sans-serif" font-size="8" fill="#78350f">Kitchen</text>
+  <!-- Balcony -->
+  <rect x="40" y="250" width="320" height="36" fill="#fdf8ec" stroke="#c99830" stroke-width="1" rx="2" opacity="0.6"/>
+  <text x="200" y="272" text-anchor="middle" font-family="Arial,sans-serif" font-size="8" fill="#78350f" opacity="0.8">Balcony</text>
+  <!-- Labels at top -->
+  <rect x="0" y="0" width="400" height="32" fill="#c99830" opacity="0.9" rx="0"/>
+  <text x="12" y="20" font-family="Arial,sans-serif" font-size="11" font-weight="700" fill="white">Type F4 · 4 BHK · Tower F</text>
+  <!-- Area info footer -->
+  <rect x="0" y="350" width="400" height="30" fill="#1f2937" opacity="0.9"/>
+  <text x="12" y="370" font-family="Arial,sans-serif" font-size="10" fill="#c99830">SBA: 2,512 sq.ft</text>
+  <text x="200" y="370" font-family="Arial,sans-serif" font-size="10" fill="#9ca3af">Carpet: 1,717 sq.ft</text>
+  <!-- Disclaimer -->
+  <text x="200" y="343" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#78350f" opacity="0.5">Indicative layout · Not to scale · Verify with developer</text>
+</svg>

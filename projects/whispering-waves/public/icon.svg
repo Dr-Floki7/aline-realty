@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="96" fill="#111827"/>
+  <!-- Building silhouette -->
+  <rect x="106" y="200" width="300" height="240" rx="4" fill="none" stroke="#c99830" stroke-width="12" opacity="0.3"/>
+  <rect x="156" y="200" width="200" height="240" rx="2" fill="#1f2937"/>
+  <!-- Windows grid -->
+  <rect x="180" y="230" width="28" height="28" rx="3" fill="#c99830" opacity="0.6"/>
+  <rect x="224" y="230" width="28" height="28" rx="3" fill="#c99830" opacity="0.4"/>
+  <rect x="268" y="230" width="28" height="28" rx="3" fill="#c99830" opacity="0.6"/>
+  <rect x="180" y="278" width="28" height="28" rx="3" fill="#c99830" opacity="0.4"/>
+  <rect x="224" y="278" width="28" height="28" rx="3" fill="#c99830" opacity="0.7"/>
+  <rect x="268" y="278" width="28" height="28" rx="3" fill="#c99830" opacity="0.4"/>
+  <rect x="180" y="326" width="28" height="28" rx="3" fill="#c99830" opacity="0.6"/>
+  <rect x="268" y="326" width="28" height="28" rx="3" fill="#c99830" opacity="0.6"/>
+  <!-- Door -->
+  <rect x="224" y="374" width="64" height="66" rx="2" fill="#c99830" opacity="0.5"/>
+  <!-- Rooftop line -->
+  <rect x="126" y="194" width="260" height="8" rx="2" fill="#c99830" opacity="0.8"/>
+  <!-- Text -->
+  <text x="256" y="160" text-anchor="middle" font-family="Georgia,serif" font-size="52" font-weight="700" fill="#c99830">WW</text>
+</svg>
