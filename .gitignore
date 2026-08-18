@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Large source material renders (copies in public/renders/ are used instead)
+docs/source-material/Renders Images/

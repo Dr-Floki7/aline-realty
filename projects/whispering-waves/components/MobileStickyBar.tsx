@@ -12,7 +12,7 @@ export default function MobileStickyBar() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const t = setTimeout(() => setVisible(true), 800);
+    const t = setTimeout(() => setVisible(true), 600);
     return () => clearTimeout(t);
   }, []);
 
@@ -24,38 +24,33 @@ export default function MobileStickyBar() {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 80, opacity: 0 }}
           transition={{ type: "spring", stiffness: 280, damping: 28 }}
-          className="fixed bottom-0 inset-x-0 z-40 lg:hidden bg-white border-t border-slate-200 shadow-2xl px-4 py-3"
+          className="fixed bottom-0 inset-x-0 z-40 lg:hidden bg-white border-t border-navy-100 shadow-2xl px-3 py-2.5 safe-bottom"
         >
-          <div className="flex items-center gap-2 max-w-sm mx-auto">
-            {/* Call */}
+          <div className="flex items-center gap-2 max-w-md mx-auto">
             <a
               href={`tel:${ALINE.phoneRaw}`}
               onClick={() => trackEvent(GA_EVENTS.PHONE_CLICK, { source:"mobile_sticky" })}
-              className="flex-1 flex items-center justify-center gap-1.5 py-3 rounded-lg bg-slate-900 text-white text-sm font-semibold hover:bg-slate-800 transition-colors"
-              aria-label={`Call ${ALINE.phone}`}
+              className="flex-1 flex items-center justify-center gap-1.5 py-3 rounded-lg bg-wave-900 text-white text-sm font-semibold"
+              aria-label="Call"
             >
-              <Phone size={15} /> Call
+              <Phone size={14} /> Call
             </a>
-
-            {/* WhatsApp */}
             <a
               href={WA_URL}
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => trackEvent(GA_EVENTS.WHATSAPP_CLICK, { source:"mobile_sticky" })}
-              className="flex-1 flex items-center justify-center gap-1.5 py-3 rounded-lg bg-[#25D366] text-white text-sm font-semibold hover:bg-[#1ebe5d] transition-colors"
-              aria-label="Chat on WhatsApp"
+              className="flex-1 flex items-center justify-center gap-1.5 py-3 rounded-lg bg-[#25D366] text-white text-sm font-semibold"
+              aria-label="WhatsApp"
             >
-              <MessageCircle size={15} /> WhatsApp
+              <MessageCircle size={14} /> WhatsApp
             </a>
-
-            {/* Get Price */}
             <button
               onClick={() => {
                 trackEvent(GA_EVENTS.PRICE_CLICK, { source:"mobile_sticky" });
                 document.getElementById("contact")?.scrollIntoView({ behavior:"smooth" });
               }}
-              className="flex-1 flex items-center justify-center gap-1.5 py-3 rounded-lg bg-gold-500 text-white text-sm font-semibold hover:bg-gold-600 transition-colors cursor-pointer"
+              className="flex-1 flex items-center justify-center gap-1.5 py-3 rounded-lg bg-terra-500 text-white text-sm font-semibold cursor-pointer"
             >
               Price <ArrowRight size={13} />
             </button>

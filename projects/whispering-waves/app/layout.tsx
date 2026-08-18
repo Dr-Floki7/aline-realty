@@ -20,7 +20,7 @@ const inter = Inter({
 // ── Production URL — always from env, never hardcoded ────────────────────────
 const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ||
-  "https://suraksha-whispering-waves.aline-realty.in";
+  "https://whisperingwaves.aline-realty.in";
 
 // ── Structured data / JSON-LD ────────────────────────────────────────────────
 const jsonLd = {
@@ -120,7 +120,7 @@ const jsonLd = {
           name: "What is Suraksha Whispering Waves?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Suraksha Whispering Waves is a residential apartment project by R K Suraksha Properties, located adjacent to the 137-acre Begur Lake in South Bengaluru. It offers 2, 3 and 4 BHK homes across six towers with curated lifestyle amenities and Club Élan, a six-level clubhouse.",
+            text: "Suraksha Whispering Waves is a residential apartment project by R K Suraksha Properties, located adjacent to the Begur Lake in South Bengaluru. It offers 2, 3 and 4 BHK homes across six towers with curated lifestyle amenities and Club Élan, a six-level clubhouse.",
           },
         },
         {

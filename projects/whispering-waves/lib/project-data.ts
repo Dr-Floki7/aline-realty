@@ -43,11 +43,13 @@ export const PROJECT = {
   nameShort:       "Whispering Waves",
   developer:       "R K Suraksha Properties",
   location:        "Begur, Bengaluru",
+  locationDetail:  "Adjacent to Begur Lake | Off Hosur Main Road",
   locationFull:    "Begur, South Bengaluru, Karnataka – 560068",
   tagline:         "2, 3 & 4 BHK Homes near Begur Lake",
+  projectSize:     "1.37 Acres",
   description:
     "Suraksha Whispering Waves is a thoughtfully crafted residential community " +
-    "adjacent to the 137-acre Begur Lake ecosystem in South Bengaluru. " +
+    "adjacent to the Begur Lake in South Bengaluru. " +
     "Offering 2, 3 and 4 BHK homes designed for natural light, ventilation and " +
     "a balanced lifestyle — with six towers, curated amenities and Club Élan, " +
     "a six-level lifestyle clubhouse.",
@@ -60,9 +62,45 @@ export const PROJECT = {
   // Number of towers (source: floor plan PDF — Towers A through F)
   towers: ["A", "B", "C", "D", "E", "F"] as const,
 
-  // Price: NOT available from any verified source — do NOT invent
-  priceAvailable: false as const,
-  priceNote:      "Contact us for the latest pricing and availability.",
+  // Price (supplied by client)
+  priceAvailable: true as const,
+  priceStarting:  "₹1.37 Cr+",
+  priceAsterisk:  "*",
+  priceNote:      "Contact us for the latest configuration-wise pricing.",
+
+  // Offer (supplied by client — exact wording)
+  offer:          "Book before September 1 & save up to ₹5 Lakhs",
+  offerAsterisk:  "*",
+  offerDisclaimer: "T&C apply. Offer valid for bookings before 1 September 2026. Contact for details.",
+
+  // Renders — assigned to sections
+  renders: {
+    hero:          "/renders/exterior-view-1.jpg",
+    heroMobile:    "/renders/street-view.jpg",
+    overview:      "/renders/pond-view.jpg",
+    clubhouse:     "/renders/clubhouse-waterbody.jpg",
+    pool:          "/renders/swimming-pool.jpg",
+    balcony:       "/renders/balcony-view.jpg",
+    amphitheatre:  "/renders/amphitheatre.jpg",
+    pavilion:      "/renders/pavilion.jpg",
+    garden:        "/renders/dense-garden.jpg",
+    herbGarden:    "/renders/herb-garden.jpg",
+    terrace:       "/renders/terraced-garden.jpg",
+    koi:           "/renders/koi-pond.jpg",
+    play:          "/renders/children-play.jpg",
+    gym:           "/renders/open-gym.jpg",
+    seating:       "/renders/seating-1.jpg",
+    deck:          "/renders/viewing-deck.jpg",
+    street:        "/renders/street-view.jpg",
+    exterior3:     "/renders/exterior-view-3.jpg",
+    exterior4:     "/renders/exterior-view-4.jpg",
+    multipurpose:  "/renders/multipurpose-court.jpg",
+    sandpit:       "/renders/sandpit.jpg",
+    toddler:       "/renders/toddler-play.jpg",
+    reflexology:   "/renders/reflexology-path.jpg",
+    seating2:      "/renders/seating-2.jpg",
+    pondView:      "/renders/pond-view.jpg",
+  },
 } as const;
 
 // ── Floor Plans ───────────────────────────────────────────────────────────────
@@ -260,7 +298,7 @@ export const HIGHLIGHTS = [
   { label: "Location",       value: "Begur, South Bengaluru"          },
   { label: "Configurations", value: "2, 3 & 4 BHK Homes"             },
   { label: "Towers",         value: "6 Towers (A – F)"                },
-  { label: "Lake Proximity", value: "Adjacent to 137-acre Begur Lake" },
+  { label: "Lake Proximity", value: "Adjacent to Begur Lake" },
   { label: "Club",           value: "Club Élan — 6-Level Clubhouse"   },
   { label: "RERA",           value: "PRM/KA/RERA/…/008555"            },
 ] as const;
@@ -271,7 +309,7 @@ export const HIGHLIGHTS = [
 export const FAQS = [
   {
     q: "What is Suraksha Whispering Waves?",
-    a: "Suraksha Whispering Waves is a residential apartment project by R K Suraksha Properties, located adjacent to the 137-acre Begur Lake in South Bengaluru. It offers 2, 3 and 4 BHK homes across six towers with curated lifestyle amenities and Club Élan, a six-level clubhouse.",
+    a: "Suraksha Whispering Waves is a residential apartment project by R K Suraksha Properties, located adjacent to the Begur Lake in South Bengaluru. It offers 2, 3 and 4 BHK homes across six towers with curated lifestyle amenities and Club Élan, a six-level clubhouse.",
   },
   {
     q: "Where is Suraksha Whispering Waves located?",
@@ -303,7 +341,7 @@ export const FAQS = [
   },
   {
     q: "What is the price of Suraksha Whispering Waves apartments?",
-    a: "Pricing is available on request. Please contact A-Line Realty for the latest price list, available configurations and current offers. Fill in the enquiry form or call us directly.",
+    a: "Suraksha Whispering Waves starts from ₹1.37 Cr+*. The project is currently offering savings of up to ₹5 Lakhs for bookings before September 1. Contact us for the latest configuration-wise price list and payment plan.",
   },
   {
     q: "How can I get the floor plans for Suraksha Whispering Waves?",

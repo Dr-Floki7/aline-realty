@@ -1,188 +1,125 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
-import { MapPin, ChevronDown, Phone, MessageCircle, ArrowRight } from "lucide-react";
-import LeadForm from "@/components/LeadForm";
-import { PROJECT, ALINE, RERA } from "@/lib/project-data";
+import { ArrowRight, MapPin } from "lucide-react";
+import { PROJECT } from "@/lib/project-data";
 import { trackEvent, GA_EVENTS } from "@/lib/analytics";
-
-const WA_URL = `https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "917337861296"}?text=${process.env.NEXT_PUBLIC_WHATSAPP_MSG || "Hi%2C%20I%20would%20like%20to%20know%20the%20latest%20price%20and%20availability%20for%20Suraksha%20Whispering%20Waves."}`;
-
-const HERO_HIGHLIGHTS = [
-  "2, 3 & 4 BHK Homes",
-  "6 Towers — A to F",
-  "Adjacent to 137-acre Begur Lake",
-  "Club Élan — 6-Level Clubhouse",
-];
 
 export default function Hero() {
   return (
-    <section id="hero" className="relative min-h-screen flex items-center bg-slate-900 overflow-hidden" aria-label="Hero">
-      {/* Background */}
-      <div className="absolute inset-0" aria-hidden>
-        {/* Deep gradient base */}
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800" />
-        {/* Gold radial glow */}
-        <div className="absolute top-0 left-1/3 w-[600px] h-[600px] bg-gold-600/8 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-gold-500/6 rounded-full blur-3xl" />
-        {/* Subtle dot grid */}
-        <div className="absolute inset-0 opacity-[0.025]"
-          style={{
-            backgroundImage: "radial-gradient(circle, #c99830 1px, transparent 1px)",
-            backgroundSize: "30px 30px",
-          }}
-        />
-      </div>
+    <section id="hero" className="relative min-h-[100svh] overflow-hidden">
+      {/* ── Full-bleed background render ── */}
+      <Image
+        src={PROJECT.renders.hero}
+        alt="Suraksha Whispering Waves exterior view — 2, 3 & 4 BHK apartments near Begur Lake, Bengaluru"
+        fill
+        priority
+        quality={85}
+        className="object-cover"
+        sizes="100vw"
+      />
 
-      {/* Content */}
-      <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 lg:pt-28">
-        <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-start">
+      {/* ── Gradient: darkens left/bottom for text, keeps right/top bright ── */}
+      <div className="absolute inset-0 bg-gradient-to-r from-navy-900/90 via-navy-900/70 to-navy-900/20 lg:to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-navy-900/60 via-transparent to-transparent" />
 
-          {/* Left — 3 cols */}
+      {/* ── Content ── */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-[100svh] flex items-center">
+        <motion.div
+          initial="hidden"
+          animate="show"
+          variants={{ show: { transition: { staggerChildren: 0.07 } } }}
+          className="max-w-xl py-28 sm:py-32"
+        >
+          {/* Location */}
           <motion.div
-            className="lg:col-span-3"
-            initial="hidden"
-            animate="show"
-            variants={{ show: { transition: { staggerChildren: 0.1 } } }}
+            variants={{ hidden:{opacity:0,y:10}, show:{opacity:1,y:0} }}
+            className="flex items-center gap-2 mb-4"
           >
-            {/* Location badge */}
-            <motion.div
-              variants={{ hidden: { opacity:0, y:16 }, show: { opacity:1, y:0 } }}
-              className="flex items-center gap-2 mb-5"
-            >
-              <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-gold-300 bg-gold-500/10 border border-gold-500/20 px-3 py-1.5 rounded-full">
-                <MapPin size={12} /> {PROJECT.location}
-              </span>
-              <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-400 bg-white/5 border border-white/10 px-3 py-1.5 rounded-full">
-                RERA Registered
-              </span>
-            </motion.div>
-
-            {/* Main heading — H1 for SEO */}
-            <motion.h1
-              variants={{ hidden: { opacity:0, y:20 }, show: { opacity:1, y:0, transition:{ duration:0.65 } } }}
-              className="heading-xl text-white text-4xl sm:text-5xl lg:text-[52px] mb-3"
-            >
-              Suraksha<br />
-              <span className="text-gold-400">Whispering Waves</span>
-            </motion.h1>
-
-            <motion.p
-              variants={{ hidden: { opacity:0, y:16 }, show: { opacity:1, y:0 } }}
-              className="text-lg sm:text-xl text-slate-300 font-light mb-6"
-            >
-              2, 3 &amp; 4 BHK Homes near Begur Lake, South Bengaluru
-            </motion.p>
-
-            {/* Highlights */}
-            <motion.ul
-              variants={{ hidden: { opacity:0 }, show: { opacity:1, transition:{ staggerChildren:0.07 } } }}
-              className="flex flex-col gap-2 mb-8"
-            >
-              {HERO_HIGHLIGHTS.map((h) => (
-                <motion.li
-                  key={h}
-                  variants={{ hidden: { opacity:0, x:-12 }, show: { opacity:1, x:0 } }}
-                  className="flex items-center gap-2.5 text-sm text-slate-300"
-                >
-                  <span className="w-1.5 h-1.5 rounded-full bg-gold-400 shrink-0" />
-                  {h}
-                </motion.li>
-              ))}
-            </motion.ul>
-
-            {/* CTA row */}
-            <motion.div
-              variants={{ hidden: { opacity:0, y:16 }, show: { opacity:1, y:0 } }}
-              className="flex flex-wrap gap-3 mb-8"
-            >
-              <button
-                onClick={() => {
-                  trackEvent(GA_EVENTS.PRICE_CLICK, { source: "hero" });
-                  document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
-                }}
-                className="btn-primary cursor-pointer"
-              >
-                Get Latest Price <ArrowRight size={15} />
-              </button>
-              <button
-                onClick={() => {
-                  trackEvent(GA_EVENTS.FLOORPLAN_CLICK, { source: "hero" });
-                  document.getElementById("floor-plans")?.scrollIntoView({ behavior: "smooth" });
-                }}
-                className="btn-ghost-white cursor-pointer"
-              >
-                View Floor Plans
-              </button>
-            </motion.div>
-
-            {/* Contact strip */}
-            <motion.div
-              variants={{ hidden: { opacity:0 }, show: { opacity:1 } }}
-              className="flex flex-wrap items-center gap-4"
-            >
-              <a
-                href={`tel:${ALINE.phoneRaw}`}
-                onClick={() => trackEvent(GA_EVENTS.PHONE_CLICK, { source:"hero" })}
-                className="flex items-center gap-2 text-sm font-semibold text-white hover:text-gold-300 transition-colors"
-              >
-                <Phone size={14} /> {ALINE.phone}
-              </a>
-              <span className="text-slate-600 hidden sm:block">|</span>
-              <a
-                href={WA_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => trackEvent(GA_EVENTS.WHATSAPP_CLICK, { source:"hero" })}
-                className="flex items-center gap-2 text-sm font-semibold text-[#25D366] hover:text-[#1ebe5d] transition-colors"
-              >
-                <MessageCircle size={14} /> WhatsApp
-              </a>
-              <span className="text-slate-600 hidden sm:block">|</span>
-              <span className="text-xs text-slate-500">by {ALINE.name}</span>
-            </motion.div>
-
-            {/* Developer / RERA note */}
-            <motion.p
-              variants={{ hidden: { opacity:0 }, show: { opacity:1, transition:{ delay:0.3 } } }}
-              className="mt-6 text-xs text-slate-600 leading-relaxed max-w-lg"
-            >
-              Developer / Promoter: {RERA.promoter} &middot;{" "}
-              RERA: {RERA.registrationNumber}
-            </motion.p>
+            <MapPin size={14} className="text-wave-300" />
+            <span className="text-wave-200 text-sm font-medium tracking-wide">
+              Begur, Bengaluru
+            </span>
           </motion.div>
 
-          {/* Right — lead form (2 cols) */}
-          <motion.div
-            className="lg:col-span-2"
-            initial={{ opacity:0, x:30 }}
-            animate={{ opacity:1, x:0 }}
-            transition={{ duration:0.6, delay:0.25 }}
+          {/* Project name — H1 */}
+          <motion.h1
+            variants={{ hidden:{opacity:0,y:16}, show:{opacity:1,y:0, transition:{duration:0.5}} }}
+            className="font-display text-white text-[clamp(2.6rem,7vw,4rem)] leading-[1.05] mb-4"
           >
-            <LeadForm
-              enquiryType="price"
-              heading="Get Latest Price"
-              subheading="Fill in your details and we'll contact you shortly."
-              ctaLabel="Get Price & Availability"
-            />
-          </motion.div>
-        </div>
-      </div>
+            Suraksha<br />Whispering Waves
+          </motion.h1>
 
-      {/* Scroll indicator */}
-      <motion.button
-        initial={{ opacity:0 }}
-        animate={{ opacity:1 }}
-        transition={{ delay:1.4 }}
-        onClick={() => document.getElementById("highlights")?.scrollIntoView({ behavior:"smooth" })}
-        className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-slate-500 hover:text-gold-400 transition-colors cursor-pointer"
-        aria-label="Scroll down"
-      >
-        <span className="text-[9px] tracking-[0.2em] uppercase font-medium">Scroll</span>
-        <motion.div animate={{ y:[0,5,0] }} transition={{ repeat:Infinity, duration:1.6 }}>
-          <ChevronDown size={16} />
+          {/* Location detail line */}
+          <motion.p
+            variants={{ hidden:{opacity:0,y:10}, show:{opacity:1,y:0} }}
+            className="text-wave-200/80 text-sm font-medium mb-6"
+          >
+            Adjacent to Begur Lake | Off Hosur Main Road
+          </motion.p>
+
+          {/* ── COMMERCIAL INFO — large, prominent ── */}
+          <motion.div
+            variants={{ hidden:{opacity:0,y:12}, show:{opacity:1,y:0} }}
+            className="mb-4"
+          >
+            <p className="text-white text-xl sm:text-2xl font-semibold mb-1">
+              2, 3 &amp; 4 BHK
+            </p>
+            <p className="font-display text-terra-300 text-3xl sm:text-4xl">
+              {PROJECT.priceStarting}<sup className="text-base align-super">{PROJECT.priceAsterisk}</sup>
+            </p>
+          </motion.div>
+
+          {/* ── Offer — visually distinct ── */}
+          <motion.div
+            variants={{ hidden:{opacity:0,y:12}, show:{opacity:1,y:0} }}
+            className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg px-5 py-4 mb-8 max-w-sm"
+          >
+            <p className="text-white/90 text-[13px] font-semibold uppercase tracking-wide mb-1">
+              Book before September 1
+            </p>
+            <p className="text-terra-300 text-lg sm:text-xl font-bold">
+              Save up to ₹5 Lakhs<sup className="text-xs">{PROJECT.offerAsterisk}</sup>
+            </p>
+          </motion.div>
+
+          {/* CTAs */}
+          <motion.div
+            variants={{ hidden:{opacity:0,y:14}, show:{opacity:1,y:0} }}
+            className="flex flex-wrap gap-3 mb-6"
+          >
+            <button
+              onClick={() => {
+                trackEvent(GA_EVENTS.PRICE_CLICK, { source:"hero" });
+                document.getElementById("contact")?.scrollIntoView({ behavior:"smooth" });
+              }}
+              className="btn-primary text-base px-8 py-3.5"
+            >
+              Get Latest Price <ArrowRight size={16} />
+            </button>
+            <button
+              onClick={() => {
+                trackEvent(GA_EVENTS.SITE_VISIT_CLICK, { source:"hero" });
+                document.getElementById("contact")?.scrollIntoView({ behavior:"smooth" });
+              }}
+              className="btn-ghost"
+            >
+              Book a Site Visit
+            </button>
+          </motion.div>
+
+          {/* RERA micro-line */}
+          <motion.p
+            variants={{ hidden:{opacity:0}, show:{opacity:1, transition:{delay:0.4}} }}
+            className="text-white/30 text-[11px] leading-relaxed"
+          >
+            RERA: PRM/KA/RERA/1251/310/PR/270326/008555<br />
+            Developer: R K Suraksha Properties
+          </motion.p>
         </motion.div>
-      </motion.button>
+      </div>
     </section>
   );
 }

@@ -1,97 +1,130 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Camera, ArrowRight } from "lucide-react";
-import { trackEvent, GA_EVENTS } from "@/lib/analytics";
+import { useState } from "react";
+import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
+import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import { PROJECT } from "@/lib/project-data";
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 20 },
-  show:   { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
-};
-
-// Placeholder gallery items — replace with actual project images when available
-const GALLERY_ITEMS = [
-  { id: 1, label: "Project Exterior", color: "from-slate-200 to-slate-300" },
-  { id: 2, label: "Club Élan", color: "from-gold-100 to-gold-200" },
-  { id: 3, label: "Living Room", color: "from-amber-50 to-amber-100" },
-  { id: 4, label: "Begur Lake View", color: "from-sky-100 to-sky-200" },
-  { id: 5, label: "Amenities", color: "from-green-100 to-green-200" },
-  { id: 6, label: "Bedroom", color: "from-slate-100 to-slate-200" },
+const GALLERY = [
+  { src: PROJECT.renders.exterior3,    alt: "Suraksha Whispering Waves exterior view" },
+  { src: PROJECT.renders.clubhouse,    alt: "Suraksha Whispering Waves clubhouse" },
+  { src: PROJECT.renders.pool,         alt: "Suraksha Whispering Waves swimming pool" },
+  { src: PROJECT.renders.garden,       alt: "Suraksha Whispering Waves dense garden" },
+  { src: PROJECT.renders.amphitheatre, alt: "Suraksha Whispering Waves amphitheatre" },
+  { src: PROJECT.renders.pavilion,     alt: "Suraksha Whispering Waves pavilion area" },
+  { src: PROJECT.renders.koi,          alt: "Suraksha Whispering Waves koi pond" },
+  { src: PROJECT.renders.terrace,      alt: "Suraksha Whispering Waves terraced garden" },
+  { src: PROJECT.renders.deck,         alt: "Suraksha Whispering Waves viewing deck" },
+  { src: PROJECT.renders.gym,          alt: "Suraksha Whispering Waves open gym" },
+  { src: PROJECT.renders.play,         alt: "Suraksha Whispering Waves children play area" },
+  { src: PROJECT.renders.herbGarden,   alt: "Suraksha Whispering Waves herb garden" },
 ];
 
 export default function Gallery() {
+  const [lightboxIdx, setLightboxIdx] = useState<number | null>(null);
+
+  const openLightbox = (i: number) => setLightboxIdx(i);
+  const closeLightbox = () => setLightboxIdx(null);
+  const prev = () => setLightboxIdx(i => i !== null ? (i === 0 ? GALLERY.length - 1 : i - 1) : null);
+  const next = () => setLightboxIdx(i => i !== null ? (i === GALLERY.length - 1 ? 0 : i + 1) : null);
+
   return (
-    <section id="gallery" className="py-20 lg:py-28 bg-slate-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <motion.div
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.3 }}
-          variants={{ show: { transition: { staggerChildren: 0.1 } } }}
-          className="max-w-2xl mx-auto text-center mb-12"
-        >
-          <motion.span variants={fadeUp} className="eyebrow mb-4 inline-flex">
-            <span className="w-1.5 h-1.5 rounded-full bg-gold-400" /> Gallery
-          </motion.span>
-          <motion.h2 variants={fadeUp} className="heading-lg text-3xl sm:text-4xl text-slate-900 mb-4">
-            Project{" "}
-            <span className="text-gold-500">Gallery</span>
-          </motion.h2>
-          <motion.div variants={fadeUp} className="gold-bar mx-auto mb-5" />
-          <motion.p variants={fadeUp} className="text-slate-500 text-[15.5px] leading-relaxed">
-            A glimpse into the lifestyle at Suraksha Whispering Waves.
-            Official project images will be updated as they become available.
-          </motion.p>
-        </motion.div>
-
-        {/* Gallery grid — placeholder layout */}
-        <motion.div
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.1 }}
-          variants={{ show: { transition: { staggerChildren: 0.08 } } }}
-          className="grid grid-cols-2 lg:grid-cols-3 gap-4"
-        >
-          {GALLERY_ITEMS.map(item => (
-            <motion.div
-              key={item.id}
-              variants={fadeUp}
-              className={`relative rounded-2xl overflow-hidden aspect-[4/3] bg-gradient-to-br ${item.color} border border-slate-200 flex items-center justify-center group`}
-            >
-              <div className="text-center">
-                <Camera size={28} className="text-slate-400 mx-auto mb-2" strokeWidth={1.5} />
-                <p className="text-sm font-medium text-slate-500">{item.label}</p>
-                <p className="text-[10px] text-slate-400 mt-1">Image coming soon</p>
-              </div>
-              {/* Hover overlay */}
-              <div className="absolute inset-0 bg-slate-900/0 group-hover:bg-slate-900/10 transition-all duration-300" />
-            </motion.div>
-          ))}
-        </motion.div>
-
-        {/* Brochure CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mt-10"
-        >
-          <p className="text-slate-500 text-sm mb-4">
-            Want to see more? Download the full project brochure.
-          </p>
-          <button
-            onClick={() => {
-              trackEvent(GA_EVENTS.BROCHURE_CLICK, { source: "gallery" });
-              document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
-            }}
-            className="btn-primary cursor-pointer"
+    <>
+      <section id="gallery" className="py-24 lg:py-32 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity:0, y:20 }}
+            whileInView={{ opacity:1, y:0 }}
+            viewport={{ once:true }}
+            transition={{ duration:0.5 }}
+            className="text-center mb-14"
           >
-            Download Brochure <ArrowRight size={14} />
-          </button>
-        </motion.div>
-      </div>
-    </section>
+            <p className="text-gold-500 text-sm font-semibold tracking-[0.12em] uppercase mb-4">Gallery</p>
+            <h2 className="font-display text-slate-900 text-3xl sm:text-4xl">
+              Project Gallery
+            </h2>
+          </motion.div>
+
+          {/* Grid — masonry-like with varying heights */}
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-3">
+            {GALLERY.map((img, i) => (
+              <motion.button
+                key={i}
+                initial={{ opacity:0, y:12 }}
+                whileInView={{ opacity:1, y:0 }}
+                viewport={{ once:true }}
+                transition={{ duration:0.4, delay: (i % 6) * 0.05 }}
+                onClick={() => openLightbox(i)}
+                className={`relative overflow-hidden rounded-lg cursor-pointer group ${
+                  i === 0 || i === 5 ? "row-span-2 aspect-[3/4]" : "aspect-[4/3]"
+                }`}
+                aria-label={`View ${img.alt}`}
+              >
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 640px) 50vw, 33vw"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+              </motion.button>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Lightbox */}
+      <AnimatePresence>
+        {lightboxIdx !== null && (
+          <motion.div
+            initial={{ opacity:0 }}
+            animate={{ opacity:1 }}
+            exit={{ opacity:0 }}
+            className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4"
+            onClick={closeLightbox}
+          >
+            <motion.div
+              initial={{ scale:0.95 }}
+              animate={{ scale:1 }}
+              exit={{ scale:0.95 }}
+              className="relative max-w-5xl w-full aspect-[16/10] rounded-lg overflow-hidden"
+              onClick={e => e.stopPropagation()}
+            >
+              <Image
+                src={GALLERY[lightboxIdx].src}
+                alt={GALLERY[lightboxIdx].alt}
+                fill
+                className="object-contain"
+                sizes="90vw"
+                priority
+              />
+            </motion.div>
+
+            {/* Controls */}
+            <button onClick={e => { e.stopPropagation(); prev(); }}
+              className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 backdrop-blur cursor-pointer"
+              aria-label="Previous">
+              <ChevronLeft size={20} />
+            </button>
+            <button onClick={e => { e.stopPropagation(); next(); }}
+              className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 backdrop-blur cursor-pointer"
+              aria-label="Next">
+              <ChevronRight size={20} />
+            </button>
+            <button onClick={closeLightbox}
+              className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 backdrop-blur cursor-pointer"
+              aria-label="Close">
+              <X size={20} />
+            </button>
+            <p className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white/60 text-xs">
+              {lightboxIdx + 1} / {GALLERY.length}
+            </p>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 }
