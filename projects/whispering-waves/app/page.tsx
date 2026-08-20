@@ -3,7 +3,6 @@ import Hero               from "@/components/sections/Hero";
 import ProjectHighlights  from "@/components/sections/ProjectHighlights";
 import ProjectStory       from "@/components/sections/ProjectStory";
 import PriceSection       from "@/components/sections/PriceSection";
-import FloorPlans         from "@/components/sections/FloorPlans";
 import Amenities          from "@/components/sections/Amenities";
 import ClubElan           from "@/components/sections/ClubElan";
 import Gallery            from "@/components/sections/Gallery";
@@ -27,7 +26,6 @@ export default function Page() {
         <ProjectHighlights />
         <ProjectStory />
         <PriceSection />
-        <FloorPlans />
         <Amenities />
         <ClubElan />
         <Gallery />

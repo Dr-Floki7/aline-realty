@@ -48,14 +48,14 @@ export default function PriceSection() {
           {/* Config summary */}
           <div className="grid sm:grid-cols-3 gap-3 max-w-2xl mx-auto mb-10">
             {[
-              { config:"2 BHK", towers:"C & D", area:"1,215 – 1,267 sq.ft" },
-              { config:"3 BHK", towers:"A, B & E", area:"1,551 – 1,844 sq.ft" },
-              { config:"4 BHK", towers:"F", area:"2,467 – 2,560 sq.ft" },
+              { config:"2 BHK", towers:"C & F", area:"1,348 – 1,393 sq.ft" },
+              { config:"3 BHK", towers:"A, B, C, D, E & F", area:"1,605 – 1,850 sq.ft" },
+              { config:"4 BHK", towers:"D & E", area:"2,016 sq.ft" },
             ].map(c => (
               <div key={c.config} className="bg-white/5 border border-white/10 rounded-lg px-4 py-5 backdrop-blur-sm">
                 <p className="font-display text-white text-xl mb-1">{c.config}</p>
                 <p className="text-wave-300 text-xs font-semibold">Towers {c.towers}</p>
-                <p className="text-white/50 text-xs mt-1">{c.area} SBA</p>
+                <p className="text-white/50 text-xs mt-1">{c.area}</p>
               </div>
             ))}
           </div>

@@ -325,11 +325,11 @@ export const FAQS = [
   },
   {
     q: "What configurations are available at Suraksha Whispering Waves?",
-    a: "Suraksha Whispering Waves offers 2 BHK, 3 BHK and 4 BHK apartment configurations across six towers (A through F). 2 BHK units are in Towers C and D, 3 BHK units are in Towers A, B and E, and 4 BHK units are in Tower F.",
+    a: "Suraksha Whispering Waves offers 2 BHK, 3 BHK and 4 BHK apartment configurations across six towers (A through F). 2 BHK units are available in Towers C & F, 3 BHK units are available in Towers A, B, C, D, E & F, and 4 BHK units are available in Towers D & E.",
   },
   {
     q: "What are the apartment sizes at Suraksha Whispering Waves?",
-    a: "2 BHK apartments range from approximately 1,215 to 1,267 sq.ft SBA. 3 BHK apartments range from approximately 1,551 to 1,844 sq.ft SBA. 4 BHK apartments range from approximately 2,467 to 2,560 sq.ft SBA. Contact us for the exact carpet area details and latest availability.",
+    a: "2 BHK apartments range from 1,348 to 1,393 sq.ft. 3 BHK apartments range from 1,605 to 1,850 sq.ft. 4 BHK apartments are 2,016 sq.ft. Contact us for the latest availability and unit-specific details.",
   },
   {
     q: "What amenities does Suraksha Whispering Waves offer?",

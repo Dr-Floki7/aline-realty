@@ -136,7 +136,7 @@ const jsonLd = {
           name: "What configurations are available?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "2 BHK apartments in Towers C and D, 3 BHK apartments in Towers A, B and E, and 4 BHK apartments in Tower F.",
+            text: "2 BHK apartments in Towers C & F, 3 BHK apartments in Towers A, B, C, D, E & F, and 4 BHK apartments in Towers D & E.",
           },
         },
       ],
