@@ -42,7 +42,7 @@ export default function Gallery() {
           >
             <p className="text-gold-500 text-sm font-semibold tracking-[0.12em] uppercase mb-4">Gallery</p>
             <h2 className="font-display text-slate-900 text-3xl sm:text-4xl">
-              Project Gallery
+              Suraksha Whispering Waves Gallery
             </h2>
           </motion.div>
 

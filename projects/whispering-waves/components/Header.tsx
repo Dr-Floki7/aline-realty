@@ -47,13 +47,14 @@ export default function Header() {
         {/* Desktop nav */}
         <nav className="hidden lg:flex items-center gap-7" aria-label="Main navigation">
           {NAV.map(l => (
-            <button
+            <a
               key={l.href}
-              onClick={() => goto(l.href)}
-              className="text-[13px] font-medium text-navy-600 hover:text-wave-600 transition-colors cursor-pointer"
+              href={l.href}
+              onClick={(e) => { e.preventDefault(); goto(l.href); }}
+              className="text-[13px] font-medium text-navy-600 hover:text-wave-600 transition-colors"
             >
               {l.label}
-            </button>
+            </a>
           ))}
         </nav>
 
@@ -98,13 +99,14 @@ export default function Header() {
           >
             <nav className="px-4 pb-5 pt-2">
               {NAV.map(l => (
-                <button
+                <a
                   key={l.href}
-                  onClick={() => goto(l.href)}
-                  className="block w-full text-left py-3 text-[15px] font-medium text-navy-700 hover:text-wave-600 border-b border-navy-100/30 last:border-0 cursor-pointer"
+                  href={l.href}
+                  onClick={(e) => { e.preventDefault(); goto(l.href); }}
+                  className="block w-full text-left py-3 text-[15px] font-medium text-navy-700 hover:text-wave-600 border-b border-navy-100/30 last:border-0"
                 >
                   {l.label}
-                </button>
+                </a>
               ))}
               <div className="mt-4 grid grid-cols-2 gap-3">
                 <a href={`tel:${ALINE.phoneRaw}`} className="btn-outline text-sm py-2.5 justify-center">

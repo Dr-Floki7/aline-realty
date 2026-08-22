@@ -22,8 +22,8 @@ export default function Footer() {
         <div className="sm:col-span-2">
           <p className="font-display text-white text-xl mb-3">{PROJECT.name}</p>
           <p className="text-sm leading-relaxed max-w-sm mb-5">
-            2, 3 &amp; 4 BHK homes in Begur, South Bengaluru.
-            {PROJECT.projectSize} project by {RERA.promoter}. RERA registered.
+            2, 3 &amp; 4 BHK apartments in Begur, off Hosur Main Road, South Bengaluru.
+            {PROJECT.projectSize} RERA registered project by {RERA.promoter}, adjacent to Begur Lake.
           </p>
           <ul className="space-y-2 text-sm">
             <li className="flex items-center gap-2"><Phone size={13} className="text-wave-500" /> {ALINE.phone}</li>
@@ -37,7 +37,7 @@ export default function Footer() {
           <h3 className="text-xs font-bold tracking-[0.15em] uppercase text-wave-300 mb-5">Quick Links</h3>
           <ul className="space-y-2.5">
             {NAV.map(l => (
-              <li key={l.href}><button onClick={() => scroll(l.href.replace("#",""))} className="text-sm hover:text-white transition-colors cursor-pointer">{l.label}</button></li>
+              <li key={l.href}><a href={l.href} onClick={(e) => { e.preventDefault(); scroll(l.href.replace("#","")); }} className="text-sm hover:text-white transition-colors">{l.label}</a></li>
             ))}
           </ul>
         </div>

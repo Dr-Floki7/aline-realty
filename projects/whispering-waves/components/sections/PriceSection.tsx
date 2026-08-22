@@ -27,12 +27,15 @@ export default function PriceSection() {
           transition={{ duration:0.6 }}
         >
           <p className="text-wave-300 text-sm font-semibold tracking-[0.12em] uppercase mb-5">
-            Suraksha Whispering Waves Price
+            Suraksha Whispering Waves Price — Begur, South Bengaluru
           </p>
 
           <h2 className="font-display text-white text-3xl sm:text-4xl mb-3">
-            2, 3 &amp; 4 BHK starting from
+            Suraksha Whispering Waves Price
           </h2>
+          <p className="text-wave-200 text-lg mb-2">
+            2, 3 &amp; 4 BHK starting from
+          </p>
           <p className="font-display text-terra-300 text-5xl sm:text-6xl lg:text-7xl mb-4">
             {PROJECT.priceStarting}<sup className="text-xl">{PROJECT.priceAsterisk}</sup>
           </p>
@@ -69,6 +72,16 @@ export default function PriceSection() {
           >
             Get Latest Price <ArrowRight size={16} />
           </button>
+
+          {/* Crawlable pricing text for SEO */}
+          <p className="text-white/50 text-sm max-w-xl mx-auto mt-10 leading-relaxed">
+            Suraksha Whispering Waves price starts from ₹1.37 Cr+ for a 2 BHK apartment
+            (1,348–1,393 sq.ft) in Blocks C and F. The 3 BHK configurations are priced
+            from ₹1.62 Cr to ₹1.86 Cr+ (1,605–1,850 sq.ft) and are available across all
+            six blocks. The 4 BHK at 2,016 sq.ft is priced from ₹2.03 Cr+ in Blocks D and E.
+            Prices are indicative and subject to change — contact us for the latest
+            configuration-wise cost sheet and availability.
+          </p>
         </motion.div>
       </div>
     </section>

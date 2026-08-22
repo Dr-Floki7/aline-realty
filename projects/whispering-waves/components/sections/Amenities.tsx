@@ -25,7 +25,7 @@ export default function Amenities() {
         >
           <p className="text-wave-600 text-sm font-semibold tracking-[0.12em] uppercase mb-4">Amenities</p>
           <h2 className="font-display text-navy-900 text-3xl sm:text-4xl mb-4">
-            A Community Designed for Balance
+            Amenities at Suraksha Whispering Waves
           </h2>
           <p className="text-navy-500 text-[15.5px] leading-relaxed">
             Thoughtfully organised into four lifestyle zones — Social, Revive, Engage and Breathe —

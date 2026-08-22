@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { Plus, Minus } from "lucide-react";
 import { FAQS } from "@/lib/project-data";
 
@@ -28,8 +28,8 @@ export default function FAQ() {
             <span className="w-1.5 h-1.5 rounded-full bg-gold-400" /> Frequently Asked Questions
           </motion.span>
           <motion.h2 variants={fadeUp} className="heading-lg text-3xl sm:text-4xl text-slate-900 mb-4">
-            Your Questions{" "}
-            <span className="text-gold-500">Answered</span>
+            Suraksha Whispering Waves —{" "}
+            <span className="text-gold-500">FAQ</span>
           </motion.h2>
           <motion.div variants={fadeUp} className="gold-bar mx-auto mb-5" />
           <motion.p variants={fadeUp} className="text-slate-500 text-[15.5px] leading-relaxed">
@@ -75,23 +75,21 @@ export default function FAQ() {
                     }
                   </span>
                 </button>
-                <AnimatePresence initial={false}>
-                  {isOpen && (
-                    <motion.div
-                      id={`faq-answer-${i}`}
-                      role="region"
-                      aria-labelledby={`faq-q-${i}`}
-                      initial={{ height:0, opacity:0 }}
-                      animate={{ height:"auto", opacity:1 }}
-                      exit={{ height:0, opacity:0 }}
-                      transition={{ duration:0.25, ease:"easeInOut" }}
-                    >
-                      <div className="px-6 pb-5">
-                        <p className="text-[14.5px] text-slate-600 leading-relaxed">{faq.a}</p>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                {/* Answer — always in DOM for crawlability, visually toggled */}
+                <div
+                  id={`faq-answer-${i}`}
+                  role="region"
+                  aria-labelledby={`faq-q-${i}`}
+                  className={`grid transition-[grid-template-rows] duration-250 ease-in-out ${
+                    isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+                  }`}
+                >
+                  <div className="overflow-hidden">
+                    <div className="px-6 pb-5">
+                      <p className="text-[14.5px] text-slate-600 leading-relaxed">{faq.a}</p>
+                    </div>
+                  </div>
+                </div>
               </motion.div>
             );
           })}

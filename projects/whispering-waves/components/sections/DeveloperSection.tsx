@@ -15,14 +15,21 @@ export default function DeveloperSection() {
           transition={{ duration:0.5 }}
           className="text-center"
         >
-          <p className="text-gold-500 text-sm font-semibold tracking-[0.12em] uppercase mb-4">Developer</p>
+          <p className="text-gold-500 text-sm font-semibold tracking-[0.12em] uppercase mb-4">Developer &amp; RERA</p>
           <h2 className="font-display text-slate-900 text-3xl sm:text-4xl mb-4">
-            {RERA.promoter}
+            Suraksha Whispering Waves — Developer &amp; RERA
           </h2>
-          <p className="text-slate-500 text-[15.5px] leading-relaxed max-w-xl mx-auto mb-8">
-            Suraksha has delivered homes across Bengaluru with a commitment to quality
-            and transparency. {PROJECT.name} is their latest residential project in
-            South Bengaluru.
+          <p className="text-slate-500 text-[15.5px] leading-relaxed max-w-xl mx-auto mb-4">
+            Suraksha Whispering Waves is developed by R K Suraksha Properties. With 27 years
+            of legacy in delivering homes across Bengaluru, the Suraksha Group brings a
+            track record of quality construction and transparent dealings.
+          </p>
+          <p className="text-slate-500 text-[15px] leading-relaxed max-w-xl mx-auto mb-8">
+            The project is RERA registered under the Karnataka Real Estate Regulatory
+            Authority — registration number PRM/KA/RERA/1251/310/PR/270326/008555,
+            approved on 27 March 2026, valid until 31 December 2030. The registered
+            project address is Sy Nos. 149/4, 149/14, 134/2, Subhash Nagar Main Road,
+            Begur Village, Begur Hobli, Bengaluru South – 560068.
           </p>
 
           <div className="bg-slate-50 rounded-lg border border-slate-200 divide-y divide-slate-100 text-left max-w-lg mx-auto mb-6">

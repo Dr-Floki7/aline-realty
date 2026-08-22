@@ -25,8 +25,8 @@ export default function ContactSection() {
               Get Latest Price &amp; Details
             </h2>
             <p className="text-wave-400 text-[15.5px] leading-relaxed mb-8">
-              Fill in the form for the latest price, floor plans and availability
-              for {PROJECT.name}. No commitment, no pressure.
+              Get the latest price, floor plans and availability
+              for {PROJECT.name} in Begur, South Bengaluru. No commitment, no pressure.
             </p>
 
             <div className="space-y-4 mb-8">

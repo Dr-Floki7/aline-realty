@@ -51,17 +51,31 @@ export default function ProjectStory() {
                 open spaces, natural light, and fresh air flowing seamlessly.
               </p>
               <p>
-                From well-planned 2, 3, and 4 BHK homes to curated landscapes and lifestyle
+                From well-planned 2, 3, and 4 BHK apartments in Begur to curated landscapes and lifestyle
                 amenities, every detail is designed to offer balance, comfort, and a truly
                 connected way of living.
+              </p>
+              <p>
+                Suraksha Whispering Waves comprises 272 homes on 1.37 acres with 70% open
+                space, arranged across 3 towers and 6 blocks — next to Begur Lake and off
+                Hosur Main Road in Bengaluru South. Sizes range from 1,348 sq.ft (2 BHK)
+                to 2,016 sq.ft (4 BHK), with prices starting from ₹1.37 Cr+.
+              </p>
+              <p>
+                Developed by R K Suraksha Properties — with 27 years of legacy in
+                delivering homes across Bengaluru — the project features 40+ amenities
+                including Club Élan, a six-level lifestyle clubhouse, and four distinct
+                amenity zones designed for wellness, leisure, sport and nature.
               </p>
             </div>
             <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm">
               {[
-                `${PROJECT.projectSize} project`,
-                "Breeze corridors & Lake Echo Gardens",
+                "272 homes · 70% open space",
+                `${PROJECT.projectSize} · 3 Towers, 6 Blocks`,
+                "Next to Begur Lake",
+                "Off Hosur Main Road, South Bengaluru",
                 "Vaastu-aligned, naturally ventilated",
-                "6-level Club Élan clubhouse",
+                "Club Élan · 6-level clubhouse",
               ].map(item => (
                 <span key={item} className="flex items-center gap-2 text-navy-700">
                   <span className="w-1.5 h-1.5 rounded-full bg-terra-400" />

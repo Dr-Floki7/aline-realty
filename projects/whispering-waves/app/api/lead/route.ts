@@ -84,14 +84,17 @@ export async function POST(req: NextRequest) {
       method:  "POST",
       headers: { "Content-Type": "application/json" },
       body:    JSON.stringify(row),
+      redirect: "follow",
     });
 
-    if (!response.ok) {
-      console.error("[lead/route] Apps Script returned non-OK:", response.status);
-      return NextResponse.json({ success: false, error: "Could not record your enquiry. Please call us directly." }, { status: 502 });
+    // Google Apps Script returns 302 → 200 with HTML or JSON.
+    // Any 2xx after following redirects means the script executed.
+    if (response.status >= 200 && response.status < 400) {
+      return NextResponse.json({ success: true });
     }
 
-    return NextResponse.json({ success: true });
+    console.error("[lead/route] Apps Script returned:", response.status, await response.text().catch(() => ""));
+    return NextResponse.json({ success: false, error: "Could not record your enquiry. Please call us directly." }, { status: 502 });
   } catch (err) {
     console.error("[lead/route] Fetch to Apps Script failed:", err);
     return NextResponse.json({ success: false, error: "Could not record your enquiry. Please try again or call us directly." }, { status: 500 });

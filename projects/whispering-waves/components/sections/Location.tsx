@@ -37,12 +37,20 @@ export default function Location() {
             Location &amp; Connectivity
           </p>
           <h2 className="font-display text-navy-900 text-3xl sm:text-4xl mb-4">
-            Adjacent to Begur Lake | Off Hosur Main Road
+            Suraksha Whispering Waves Location — Begur, Bengaluru
           </h2>
           <p className="text-navy-500 text-[15.5px] leading-relaxed">
-            Suraksha Whispering Waves is located adjacent to Begur Lake in South Bengaluru,
+            Suraksha Whispering Waves is located next to Begur Lake in Bengaluru South,
             off Hosur Main Road — with excellent connectivity to Electronic City,
             Silk Board, HSR Layout and Koramangala.
+          </p>
+          <p className="text-navy-500 text-[15px] leading-relaxed mt-3">
+            The Begur neighbourhood offers a calm residential setting while remaining
+            well-connected to South Bengaluru&apos;s key employment and lifestyle corridors.
+            Basapura Metro Station on the Yellow Line is approximately 3 km away, providing
+            rapid transit access. Electronic City is 6 km, Koramangala 7 km, and JP Nagar
+            8 km. Schools, hospitals, malls and IT parks are all accessible within the
+            immediate area.
           </p>
         </motion.div>
 

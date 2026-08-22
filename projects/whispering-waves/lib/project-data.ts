@@ -51,7 +51,7 @@ export const PROJECT = {
     "Suraksha Whispering Waves is a thoughtfully crafted residential community " +
     "adjacent to the Begur Lake in South Bengaluru. " +
     "Offering 2, 3 and 4 BHK homes designed for natural light, ventilation and " +
-    "a balanced lifestyle — with six towers, curated amenities and Club Élan, " +
+    "a balanced lifestyle — with 3 towers and 6 blocks, curated amenities and Club Élan, " +
     "a six-level lifestyle clubhouse.",
   developerWebsite: "https://surakshawhisperingwaves.com/",
   mapEmbedQuery:   "Begur+Lake+Bengaluru+Karnataka",
@@ -297,7 +297,7 @@ export const CONNECTIVITY: ConnectivityItem[] = [
 export const HIGHLIGHTS = [
   { label: "Location",       value: "Begur, South Bengaluru"          },
   { label: "Configurations", value: "2, 3 & 4 BHK Homes"             },
-  { label: "Towers",         value: "6 Towers (A – F)"                },
+  { label: "Towers",         value: "3 Towers · 6 Blocks"             },
   { label: "Lake Proximity", value: "Adjacent to Begur Lake" },
   { label: "Club",           value: "Club Élan — 6-Level Clubhouse"   },
   { label: "RERA",           value: "PRM/KA/RERA/…/008555"            },
@@ -309,7 +309,7 @@ export const HIGHLIGHTS = [
 export const FAQS = [
   {
     q: "What is Suraksha Whispering Waves?",
-    a: "Suraksha Whispering Waves is a residential apartment project by R K Suraksha Properties, located adjacent to the Begur Lake in South Bengaluru. It offers 2, 3 and 4 BHK homes across six towers with curated lifestyle amenities and Club Élan, a six-level clubhouse.",
+    a: "Suraksha Whispering Waves is a residential apartment project by R K Suraksha Properties, located adjacent to the Begur Lake in South Bengaluru. It offers 2, 3 and 4 BHK homes across 3 towers and 6 blocks with curated lifestyle amenities and Club Élan, a six-level clubhouse.",
   },
   {
     q: "Where is Suraksha Whispering Waves located?",
@@ -325,7 +325,7 @@ export const FAQS = [
   },
   {
     q: "What configurations are available at Suraksha Whispering Waves?",
-    a: "Suraksha Whispering Waves offers 2 BHK, 3 BHK and 4 BHK apartment configurations across six towers (A through F). 2 BHK units are available in Towers C & F, 3 BHK units are available in Towers A, B, C, D, E & F, and 4 BHK units are available in Towers D & E.",
+    a: "Suraksha Whispering Waves offers 2 BHK, 3 BHK and 4 BHK apartment configurations across 3 towers and 6 blocks (A through F). 2 BHK units are available in Towers C & F, 3 BHK units are available in Towers A, B, C, D, E & F, and 4 BHK units are available in Towers D & E.",
   },
   {
     q: "What are the apartment sizes at Suraksha Whispering Waves?",
@@ -354,6 +354,18 @@ export const FAQS = [
   {
     q: "What is the connectivity from Suraksha Whispering Waves?",
     a: "The project offers excellent connectivity: Basapura Metro Station is 3 km away, Electronic City is 6 km, Koramangala is 7 km, JP Nagar is 8 km, and MG Road is 15 km. Schools, hospitals, malls and IT parks are all within easy reach.",
+  },
+  {
+    q: "What is the Suraksha Whispering Waves 3 BHK price?",
+    a: "3 BHK apartments at Suraksha Whispering Waves are priced from ₹1.62 Cr to ₹1.86 Cr+. Sizes range from 1,605 to 1,850 sq.ft across all six blocks (A, B, C, D, E and F). Contact us for the latest unit-specific pricing and availability.",
+  },
+  {
+    q: "What is the Suraksha Whispering Waves 2 BHK price?",
+    a: "2 BHK apartments at Suraksha Whispering Waves start from ₹1.37 Cr+ with sizes ranging from 1,348 to 1,393 sq.ft in Blocks C and F. Contact us for the latest cost sheet and available inventory.",
+  },
+  {
+    q: "How many apartments are there in Suraksha Whispering Waves?",
+    a: "Suraksha Whispering Waves comprises 272 homes across 3 towers and 6 blocks on 1.37 acres with 70% open space. The project offers 2 BHK, 3 BHK and 4 BHK configurations.",
   },
 ] as const;
 

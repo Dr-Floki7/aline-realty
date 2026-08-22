@@ -26,9 +26,9 @@ const SITE_URL =
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
-    // Organization: A-Line Realty (property advisor, NOT the developer)
+    // RealEstateAgent: A-Line Realty (property advisor, NOT the developer)
     {
-      "@type": "Organization",
+      "@type": "RealEstateAgent",
       "@id": `${SITE_URL}/#organization`,
       name: ALINE.name,
       url: ALINE.website,
@@ -59,7 +59,6 @@ const jsonLd = {
       name: `${PROJECT.name} — 2, 3 & 4 BHK Apartments in Begur, Bengaluru | ${ALINE.name}`,
       description: PROJECT.description,
       isPartOf: { "@id": `${SITE_URL}/#website` },
-      about: { "@id": `${SITE_URL}/#project` },
       inLanguage: "en-IN",
     },
     // BreadcrumbList
@@ -71,46 +70,7 @@ const jsonLd = {
         { "@type": "ListItem", position: 2, name: "Suraksha Whispering Waves", item: `${SITE_URL}/` },
       ],
     },
-    // Apartment Complex / Real Estate Listing
-    {
-      "@type": "ApartmentComplex",
-      "@id": `${SITE_URL}/#project`,
-      name: PROJECT.name,
-      description: PROJECT.description,
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: `${RERA.projectAddress.syNos}, ${RERA.projectAddress.road}`,
-        addressLocality: "Begur",
-        addressRegion: "Karnataka",
-        postalCode: RERA.projectAddress.pincode,
-        addressCountry: "IN",
-      },
-      geo: {
-        "@type": "GeoCoordinates",
-        latitude: 12.8534,
-        longitude: 77.6229,
-      },
-      numberOfRooms: "2, 3, 4",
-      // Promoter / developer (NOT A-Line Realty)
-      additionalProperty: [
-        {
-          "@type": "PropertyValue",
-          name: "RERA Registration Number",
-          value: RERA.registrationNumber,
-        },
-        {
-          "@type": "PropertyValue",
-          name: "Developer / Promoter",
-          value: RERA.promoter,
-        },
-        {
-          "@type": "PropertyValue",
-          name: "RERA Registration Validity",
-          value: RERA.registrationValidity,
-        },
-      ],
-    },
-    // FAQPage (top-level only — detailed in FAQ component)
+    // FAQPage
     {
       "@type": "FAQPage",
       "@id": `${SITE_URL}/#faq`,
@@ -120,7 +80,7 @@ const jsonLd = {
           name: "What is Suraksha Whispering Waves?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Suraksha Whispering Waves is a residential apartment project by R K Suraksha Properties, located adjacent to the Begur Lake in South Bengaluru. It offers 2, 3 and 4 BHK homes across six towers with curated lifestyle amenities and Club Élan, a six-level clubhouse.",
+            text: "Suraksha Whispering Waves is a residential apartment project by R K Suraksha Properties, located adjacent to the Begur Lake in South Bengaluru. It offers 2, 3 and 4 BHK homes across 3 towers and 6 blocks with curated lifestyle amenities and Club Élan, a six-level clubhouse.",
           },
         },
         {
@@ -149,13 +109,13 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
 
   title: {
-    default:  `${PROJECT.name} — 2, 3 & 4 BHK Apartments in Begur, Bengaluru | ${ALINE.name}`,
+    default:  `${PROJECT.name} | 2, 3 & 4 BHK in Begur, Bengaluru`,
     template: `%s | ${PROJECT.name}`,
   },
   description:
-    "Suraksha Whispering Waves — 2, 3 & 4 BHK apartments adjacent to Begur Lake, South Bengaluru. " +
-    "RERA registered project by R K Suraksha Properties. Get the latest price, floor plans and availability. " +
-    "Book a site visit through A-Line Realty.",
+    "Suraksha Whispering Waves — 2, 3 & 4 BHK from ₹1.37 Cr+. " +
+    "RERA registered apartments in Begur, Off Hosur Main Road, South Bengaluru. " +
+    "Get latest price, floor plans and book a site visit.",
 
   keywords: [
     "Suraksha Whispering Waves",
@@ -196,11 +156,11 @@ export const metadata: Metadata = {
     type:      "website",
     locale:    "en_IN",
     url:       SITE_URL,
-    siteName:  `${PROJECT.name} | ${ALINE.name}`,
+    siteName:  PROJECT.name,
     title:     `${PROJECT.name} — 2, 3 & 4 BHK Apartments near Begur Lake`,
     description:
       "Residential apartments adjacent to Begur Lake, South Bengaluru. " +
-      "RERA registered. 2, 3 & 4 BHK homes across 6 towers. Get latest price and floor plans.",
+      "RERA registered. 2, 3 & 4 BHK homes across 3 towers. Get latest price and floor plans.",
     images: [
       {
         url:    "/og-image.jpg",

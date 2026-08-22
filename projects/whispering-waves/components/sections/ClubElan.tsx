@@ -23,7 +23,7 @@ export default function ClubElan() {
         >
           <p className="text-wave-300 text-sm font-semibold tracking-[0.12em] uppercase mb-4">Clubhouse</p>
           <h2 className="font-display text-white text-3xl sm:text-4xl lg:text-5xl mb-2">
-            {CLUB_ELAN.name}
+            Club Élan at Suraksha Whispering Waves
           </h2>
           <p className="text-wave-200 text-lg mb-2">{CLUB_ELAN.levels}-Level Lifestyle Clubhouse</p>
           <p className="text-white/50 text-[15px] leading-relaxed mb-8">
