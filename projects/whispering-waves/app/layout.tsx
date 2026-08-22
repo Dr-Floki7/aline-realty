@@ -20,7 +20,7 @@ const inter = Inter({
 // ── Production URL — always from env, never hardcoded ────────────────────────
 const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ||
-  "https://suraksha-whisperingwaves.aline-realty.in";
+  "https://surakshawhisperingwaves.aline-realty.in";
 
 // ── Structured data / JSON-LD ────────────────────────────────────────────────
 const jsonLd = {

@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 
 const BASE = process.env.NEXT_PUBLIC_SITE_URL ||
-  "https://suraksha-whisperingwaves.aline-realty.in";
+  "https://surakshawhisperingwaves.aline-realty.in";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date().toISOString();

@@ -6,6 +6,17 @@ const nextConfig: NextConfig = {
     deviceSizes: [390, 640, 768, 1024, 1280, 1536],
     imageSizes: [64, 128, 256, 384],
   },
+  async redirects() {
+    return [
+      {
+        // Permanent redirect from old subdomain to new
+        source: "/:path*",
+        has: [{ type: "host", value: "suraksha-whisperingwaves.aline-realty.in" }],
+        destination: "https://surakshawhisperingwaves.aline-realty.in/:path*",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {
