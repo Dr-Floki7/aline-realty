@@ -1,6 +1,7 @@
 import Header             from "@/components/Header";
 import Hero               from "@/components/sections/Hero";
 import ProjectHighlights  from "@/components/sections/ProjectHighlights";
+import LeadCapture        from "@/components/sections/LeadCapture";
 import ProjectStory       from "@/components/sections/ProjectStory";
 import PriceSection       from "@/components/sections/PriceSection";
 import FloorPlansContent  from "@/components/sections/FloorPlansContent";
@@ -25,6 +26,7 @@ export default function Page() {
       <main id="main-content">
         <Hero />
         <ProjectHighlights />
+        <LeadCapture />
         <ProjectStory />
         <PriceSection />
         <FloorPlansContent />
