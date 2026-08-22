@@ -24,8 +24,16 @@ export default function LeadCapture() {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    if (!name.trim() || name.trim().length < 2) return;
-    if (!isValidIndianMobile(phone)) return;
+    if (!name.trim() || name.trim().length < 2) {
+      setStatus("error");
+      setErrMsg("Please enter your name.");
+      return;
+    }
+    if (!isValidIndianMobile(phone)) {
+      setStatus("error");
+      setErrMsg("Please enter a valid 10-digit mobile number.");
+      return;
+    }
     if (submitted.current) return;
     submitted.current = true;
     setStatus("loading");
@@ -111,7 +119,7 @@ export default function LeadCapture() {
           <input
             type="text"
             value={name}
-            onChange={(e) => setName(e.target.value)}
+            onChange={(e) => { setName(e.target.value); if (status === "error") setStatus("idle"); }}
             placeholder="Name"
             required
             autoComplete="name"
@@ -122,7 +130,7 @@ export default function LeadCapture() {
           <input
             type="tel"
             value={phone}
-            onChange={(e) => setPhone(e.target.value)}
+            onChange={(e) => { setPhone(e.target.value); if (status === "error") setStatus("idle"); }}
             placeholder="Mobile Number"
             required
             autoComplete="tel"
