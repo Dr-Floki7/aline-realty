@@ -143,7 +143,7 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className="border-t border-neutral-800">
         <div className="max-w-6xl mx-auto px-5 sm:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-neutral-600">
-          <p>© {new Date().getFullYear()} A-Line Realty. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} ZAKIRALI MEHBOOBALI MISHRIKOTI. All rights reserved.</p>
           <div className="flex gap-4">
             <a href="/privacy-policy" className="hover:text-neutral-400 transition-colors">Privacy Policy</a>
             <a href="/terms" className="hover:text-neutral-400 transition-colors">Terms of Use</a>
